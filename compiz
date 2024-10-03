@@ -1,0 +1,200 @@
+[core]
+as_active_plugins = core;ccp;move;resize;place;decoration;png;vpswitch;session;workarounds;imgjpeg;neg;grid;svg;resizeinfo;commands;mousepoll;regex;text;extrawm;dbus;gnomecompat;snap;animation;wall;fade;expo;scale;scaleaddon;ezoom;staticswitcher;
+s0_hsize = 5
+s0_vsize = 2
+s0_outputs = 3600x1080+0+0;
+
+[place]
+s0_multioutput_mode = 1
+
+[put]
+as_put_next_output_key = <Super>n
+s0_speed = 50.000000
+s0_timestep = 0.100000
+
+[staticswitcher]
+as_next_group_key = <Super>Tab
+as_prev_group_key = <Shift><Super>Tab
+s0_speed = 50.000000
+s0_timestep = 0.100000
+s0_popup_delay = 0.000000
+s0_saturation = 60
+s0_brightness = 60
+s0_row_align = 0
+s0_highlight_rect_hidden = 2
+
+[vpswitch]
+as_switch_to_1_key = <Super>1
+as_switch_to_2_key = <Super>2
+as_switch_to_3_key = <Super>3
+as_switch_to_4_key = <Super>4
+as_switch_to_5_key = <Super>5
+as_switch_to_6_key = <Super>6
+as_switch_to_7_key = <Super>7
+as_switch_to_8_key = <Super>8
+as_switch_to_9_key = <Super>9
+as_switch_to_10_key = <Super>0
+as_initiate_button = Disabled
+
+[snap]
+s0_snap_type = 0;1;
+
+[addhelper]
+as_toggle_key = <Super>apostrophe
+as_ononinit = true
+
+[rotate]
+as_rotate_left_window_key = <Shift><Alt>Left
+as_rotate_right_window_key = <Shift><Alt>Right
+as_rotate_to_1_key = <Super>1
+as_rotate_to_2_key = <Super>2
+as_rotate_to_3_key = <Super>3
+as_rotate_to_4_key = <Super>4
+as_rotate_to_5_key = <Super>5
+as_rotate_to_6_key = <Super>6
+as_rotate_to_7_key = <Super>7
+as_rotate_to_8_key = <Super>8
+as_rotate_to_9_key = <Super>9
+as_rotate_to_10_key = <Super>0
+as_rotate_to_1_window_key = <Alt><Super>1
+as_rotate_to_2_window_key = <Alt><Super>2
+as_rotate_to_3_window_key = <Alt><Super>3
+as_rotate_to_4_window_key = <Alt><Super>4
+as_rotate_to_5_window_key = <Alt><Super>5
+as_rotate_to_6_window_key = <Alt><Super>6
+as_rotate_to_7_window_key = <Alt><Super>7
+as_rotate_to_8_window_key = <Mod4><Alt>8
+as_rotate_to_9_window_key = <Alt><Super>9
+s0_speed = 50.000000
+s0_timestep = 1.131900
+s0_zoom = 1.118300
+
+[neg]
+as_window_toggle_key = Disabled
+
+[animation]
+s0_open_effects = animation:Zoom;animation:Fade;animation:Fade;
+s0_open_durations = 350;150;150;
+s0_close_effects = animation:Zoom;animation:Fade;animation:Fade;
+s0_close_durations = 350;150;150;
+s0_minimize_durations = 350;
+s0_time_step = 25
+
+[wall]
+as_show_switcher = false
+as_miniscreen = true
+as_allow_wraparound = true
+as_slide_duration = 0.000000
+as_left_window_key = <Shift><Alt>Left
+as_right_window_key = <Shift><Alt>Right
+as_up_window_key = <Shift><Alt>Up
+as_down_window_key = <Shift><Alt>Down
+s0_edgeflip_move = true
+
+[fade]
+s0_fade_speed = 25.000000
+s0_fade_time = 1
+
+[group]
+as_select_button = <Super>Button1
+as_select_single_key = <Shift><Super>s
+as_group_key = <Shift><Super>g
+as_ungroup_key = <Shift><Super>u
+as_remove_key = <Shift><Super>r
+as_close_key = <Shift><Super>c
+as_ignore_key = <Shift><Super>i
+as_tabmode_key = <Shift><Super>t
+as_change_tab_left_key = <Super>bracketleft
+as_change_tab_right_key = <Super>bracketright
+s0_tabbing_speed = 50.000000
+s0_tabbing_timestep = 0.100000
+s0_fade_time = 0.000000
+s0_pulse_time = 0.000000
+s0_reflex_time = 0.000000
+s0_fade_text_time = 0.000000
+s0_visibility_time = 0.000000
+s0_change_animation_time = 0.000000
+s0_border_radius = 2
+s0_tab_base_color = #000000ff
+s0_tab_border_color = #000000ff
+s0_tab_highlight_color = #000000ff
+s0_tab_style = 2
+s0_glow = false
+s0_glow_size = 35
+
+[decoration]
+as_shadow_radius = 9.000000
+as_command = gtk-window-decorator --replace
+as_mipmap = true
+
+[resizeinfo]
+as_always_show = true
+as_text_color = #ffffffff
+as_gradient_1 = #000000cc
+
+[commands]
+as_command0 = xdg-open http://gmail.com
+as_command1 = xdg-open ~
+as_command2 = gksudo synaptic
+as_command3 = quodlibet
+as_command4 = gnome-terminal -x vim 
+as_command5 = firefox
+as_command6 = xkill
+as_command7 = gnome-terminal -x top
+as_command8 = gconf-editor
+as_command9 = xdg-open computer:///
+as_command10 = gcalctool
+as_command11 = deluge
+as_run_command0_key = <Super>g
+as_run_command1_key = <Super>j
+as_run_command2_key = <Super>p
+as_run_command3_key = <Shift><Super>m
+as_run_command4_key = <Super>v
+as_run_command5_key = <Super>f
+as_run_command6_key = <Super>k
+as_run_command7_key = <Super>q
+as_run_command8_key = <Super>e
+as_run_command9_key = <Super>u
+as_run_command10_key = <Super>c
+as_run_command11_key = <Super>d
+
+[shift]
+as_next_key = <Alt>Tab
+as_prev_key = <Shift><Alt>Tab
+as_next_all_key = <Control><Alt>Tab
+as_prev_all_key = <Shift><Control><Alt>Tab
+as_next_group_key = <Super>Tab
+as_prev_group_key = <Shift><Super>Tab
+s0_speed = 10.000000
+s0_shift_speed = 5.000000
+s0_timestep = 0.100000
+s0_reflection = false
+
+[extrawm]
+as_toggle_fullscreen_key = <Shift><Super>f
+as_activate_demands_attention_key = <Shift><Super>a
+as_to_next_output_key = <Super>n
+
+[expo]
+as_expo_key = <Super>w
+
+[switcher]
+s0_speed = 50.000000
+s0_timestep = 0.100000
+s0_saturation = 43
+s0_brightness = 43
+s0_opacity = 100
+s0_auto_rotate = true
+
+[thumbnail]
+s0_current_viewport = false
+
+[scale]
+as_initiate_key = Disabled
+as_initiate_all_button = Button9
+as_initiate_all_key = <Super>grave
+s0_speed = 50.000000
+
+[gnomecompat]
+as_run_command_terminal_key = <Super>t
+

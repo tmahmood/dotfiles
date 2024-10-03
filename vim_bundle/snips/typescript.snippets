@@ -1,0 +1,12 @@
+
+snippet react_class "Reactjs class" b
+import * as React from 'react';
+class ${1:class_name} extends React.Component<any, any> {
+    constructor(props: any) {
+        super(props);
+		this.state = {
+		}
+    }
+}
+export default $1;
+endsnippet

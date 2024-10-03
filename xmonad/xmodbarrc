@@ -1,0 +1,15 @@
+Config {
+       font = "xft:Mensch:pixelsize=11",
+	   position = Top,
+       commands = [
+                Run Date "%a %b %_d %l:%M" "date" 10,
+                Run StdinReader,
+				Run Uptime  ["-t", "<days>d<hours>h<minutes>m"] 60,
+				Run ThermalZone 0 [] 20,
+				Run Com "uname" [ "-o", "-p", "-n"] "" 0
+
+                ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader% }{ %thermal0% | %uptime% | <fc=#ee9a00>%date%</fc> | %uname%"
+       }
