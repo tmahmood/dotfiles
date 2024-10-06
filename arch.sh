@@ -40,7 +40,7 @@ ln -sf ~/repo/dotfiles/zshrc ~/.zshrc
 
 alias yaync=yay -S --noconfirm
 
-yaync i3-gnome polybar dropbox jdk-openjdk intellij-idea-ultimate-edition firfox-nightly-bin ttf-martian-mono ttf-maple copyq feh flameshot keepassxc wezterm atuin starship broot task betterlockscreen dunst dex fzf ripgrep gnome-pomodoro syncthing yazi nyxt libreoffice-fresh obsidian jq p7zip ffmpegthumbnailer fd zoxide chafa tmux-plugin-manager ttf-martian-mono-nerd
+yaync i3-gnome polybar dropbox jdk-openjdk intellij-idea-ultimate-edition firefox-nightly-bin ttf-martian-mono ttf-maple copyq feh flameshot keepassxc wezterm atuin starship broot task betterlockscreen dunst dex fzf ripgrep gnome-pomodoro syncthing yazi nyxt libreoffice-fresh obsidian jq p7zip ffmpegthumbnailer fd zoxide chafa tmux-plugin-manager ttf-martian-mono-nerd npm tailwindcss
 
 rustup toolchain install nightly
 
@@ -70,6 +70,8 @@ polybar-msg cmd quit
 polybar main 2>&1 | tee -a /tmp/polybar.log & disown
 EOF_IN
 
+chmod +x ~/bin/polybar.sh
+chmod +x ~/bin/run_org_me.sh
 
 ln -sf ~/repo/dotfiles/scripts/reboot_needed ~/bin/reboot_needed
 ln -sf ~/repo/dotfiles/scripts/change_wall.sh ~/bin/change_wall.sh
@@ -82,7 +84,6 @@ vim +'PlugInstall --sync' +qa
 
 if [[ $1 == 'crossroads' ]]; then
     echo 'crossroads'
-    mkdir .config/i3/
     ln -sf ~/repo/dotfiles/crossroads/i3 ~/.config/
     ln -sf ~/repo/dotfiles/crossroads/polybar ~/.config/polybar
 elif [[ $1 == 'tmndesk' ]]; then
