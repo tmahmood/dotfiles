@@ -48,8 +48,8 @@
           "percent": 0.6,
           "swallows": [
             {
-               "class": "^org\\.gnome\\.Epiphany\\.WebApp_3744d3c3cb4eeeda863f2db7c8ba93a7aa4e7017$",
-               "instance": "^org\\.gnome\\.Epiphany\\.WebApp_3744d3c3cb4eeeda863f2db7c8ba93a7aa4e7017$"
+               "class": "^nyxt$",
+               "instance": "^Nyxt"
             }
           ],
           "type": "con"
