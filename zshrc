@@ -97,7 +97,6 @@ eval "$(zoxide init zsh)"
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 source /home/mahmood/.config/broot/launcher/bash/br
-source /usr/bin/virtualenvwrapper.sh
 source /usr/share/nvm/init-nvm.sh
 # source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
