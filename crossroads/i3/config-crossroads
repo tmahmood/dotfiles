@@ -409,7 +409,7 @@ bindsym $mod+Shift+Ctrl+w exec "$HOME/bin/change_wall.sh > ~/tmp/logs/change_wal
 bindsym $mod+Shift+Ctrl+d exec "cat $HOME/tmp/logs/change_wall.log >> $HOME/tmp/logs/rem_wall.log"
 
 # finally apply layouts
-exec --no-startup-id "i3-msg 'workspace og; append_layout /home/mahmood/.config/i3/workspace-og.json'"
+exec --no-startup-id "i3-msg 'workspace og; append_layout /home/mahmood/Dropbox/configs/i3/workspace-og.json'"
 # TODO: Add more auto layout things
 
 # Start i3bar to display a workspace bar (plus the system information i3status

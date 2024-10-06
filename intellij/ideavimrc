@@ -1,0 +1,63 @@
+set ideajoin
+set ideastatusicon=gray
+set number relativenumber
+set idearefactormode=keep
+let mapleader=' '
+set NERDTree
+set easymotion
+set highlightedyank
+
+nmap <leader><leader> <Action>(IdeaVim.ReloadVimRc.reload)
+nmap <leader>o <Action>(ChooseRunConfiguration)
+
+nmap <leader>g <Action>(VcsGroups)
+nmap <leader>gk <Action>(CheckinProject)
+nmap <leader>gl <Action>(Vcs.Show.Log)
+
+nmap <leader>e <Action>(GotoNextError)
+nmap <leader>p <Action>(GotoPreviousError)
+
+nmap <leader>n <Action>(WelcomeScreen.CreateNewProject)
+
+nmap <leader>m <Action>($LRU)
+nmap <leader>b <Action>(RecentFiles)
+nmap <leader>f <Action>(FileStructurePopup)
+
+nmap ]C <Action>(VcsShowNextChangeMarker)
+nmap [C <Action>(VcsShowPrevChangeMarker)
+
+nmap <leader>t <Action>(ActivateTODOToolWindow)
+
+" go to type declearation
+" nmap <leader>gd <Action>(GotoTypeDeclaration)
+"
+
+" []
+nmap [b <Action>(PreviousTab)
+nmap ]b <Action>(NextTab)
+nmap [g <Action>(GotoPreviousError)
+nmap ]g <Action>(GotoNextError)
+nmap [u <Action>(GotoPrevElementUnderCaretUsage)
+nmap ]u <Action>(GotoNextElementUnderCaretUsage)
+nmap [o <Action>(PreviousOccurence)
+nmap ]o <Action>(NextOccurence)
+nmap [m <Action>(MethodUp)
+nmap ]m <Action>(MethodDown)
+nmap [c <Action>(JumpToLastChange)
+nmap ]c <Action>(JumpToNextChange)
+
+nmap <leader>z <Action>(ToggleDistractionFreeMode)
+nmap <leader>w <Action>(HideAllWindows)
+nmap <leader>ww <Action>(EditSourceInNewWindow)
+nmap <leader>wx <Action>(MoveEditorToOppositeTabGroup)
+nmap <leader>xx <Action>(CloseContent)
+nmap <leader>xa <Action>(CloseAllEditors)
+nmap <leader>xo <Action>(CloseAllEditorsButActive)
+nmap <leader>xp <Action>(CloseAllUnpinnedEditors)
+
+
+" string manipulate (required idea plugin: String Manipulation)
+nmap <leader>cc <Action>(StringManipulation.ToSnakeCaseOrCamelCase)
+nmap <leader>ss <Action>(osmedile.intellij.stringmanip.PopupChoiceAction)
+
+set surround

@@ -1,0 +1,58 @@
+#!/usr/bin/python
+import datetime
+import subprocess
+
+
+def was_kernel_updated():
+    first_cmd = subprocess.run(["pacman", "-Q", "linux"], capture_output=True)
+    result_1 = first_cmd.stdout.decode('utf-8').strip().split() \
+        .pop() \
+        .strip() \
+        .replace('-ARCH', '') \
+        .replace('-', '') \
+        .replace('.', '')
+    second_cmd = subprocess.run(["uname", "-r"], capture_output=True)
+    result_2 = second_cmd.stdout.decode('utf-8') \
+        .strip() \
+        .replace('-ARCH', '') \
+        .replace('-', '') \
+        .replace('.', '')
+    return not (result_1 == result_2)
+
+
+def get_uptime():
+    with open('/proc/uptime', 'r') as f:
+        uptime_seconds = float(f.readline().split()[0])
+    now = datetime.datetime.today()
+    return now.timestamp() - uptime_seconds
+
+
+def was_nvidia_updated():
+    """ Tries to figure if nvidia package was updated recently """
+    # how long the computer been running?
+    uptime = get_uptime()
+    package_status = subprocess.run(["pacman", "-Q", "nvidia", "-ki"], capture_output=True)
+    # there would be one line
+    date_installed_line: str = next(filter(lambda x: x.startswith('Install Date'),
+                                           package_status.stdout.decode('utf-8').splitlines()))
+    date_installed_str = date_installed_line.split(':', 1).pop().strip()
+    date_installed = datetime.datetime.strptime(date_installed_str, '%a %d %b %Y %H:%M:%S %p %Z')
+    return date_installed.timestamp() > uptime
+
+
+def main():
+    """Entry point"""
+    kernel_updated = was_kernel_updated()
+    nvidia_updated = was_nvidia_updated()
+    if kernel_updated and nvidia_updated:
+        print("󰓧")
+    elif nvidia_updated:
+        print("🚨🪧")
+    elif kernel_updated:
+        print("󰓦")
+    else:
+        print("󰅎")
+
+
+if __name__ == '__main__':
+    main()

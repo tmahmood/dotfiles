@@ -2,4 +2,4 @@ ssh_certs/
 pub_keys/
 vim_bundle/plugged
 oh-my-zsh/cache/
-vim_bundle/old_cfg
+retired/old_cfg
