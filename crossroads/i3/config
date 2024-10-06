@@ -198,49 +198,6 @@ set $ws19 "d3"
 
 set $ws20 "ms"
 
-set $o1 "DP-0"
-set $o2 "HDMI-0"
-set $o3 "HDMI-2"
-
-workspace $ws01 output $o1
-workspace $ws02 output $o1
-workspace $ws03 output $o1
-workspace $ws04 output $o1
-workspace $ws05 output $o1
-workspace $ws06 output $o2
-workspace $ws07 output $o2
-workspace $ws08 output $o2
-workspace $ws09 output $o2
-
-workspace $ws10 output $o2
-
-workspace $ws11 output $o1
-workspace $ws12 output $o2
-
-workspace $ws13 output $o1
-workspace $ws20 output $o2
-
-workspace $ws14 output $o1
-workspace $ws15 output $o2
-
-workspace $ws16 output $o1
-workspace $ws17 output $o2
-
-workspace $ws18 output $o1
-workspace $ws19 output $o2
-
-# client workspaces
-# NOTE: This may change
-workspace $cl1 output $o1
-workspace $cl2 output $o1
-workspace $cl3 output $o1
-# other things
-workspace "gm" output $o1
-workspace "og" output $o2
-workspace "nt" output $o2
-workspace "uw" output $o2
-workspace "fa" output $o2
-
 # switch to workspace
 bindsym $mod+1 workspace number $ws01
 bindsym $mod+2 workspace number $ws02
@@ -310,8 +267,6 @@ mode "$i3_mode" {
     bindsym Escape mode "default"
     bindsym $mod+e mode "default"
 }
-
-
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -409,7 +364,7 @@ bindsym $mod+Shift+Ctrl+w exec "$HOME/bin/change_wall.sh > ~/tmp/logs/change_wal
 bindsym $mod+Shift+Ctrl+d exec "cat $HOME/tmp/logs/change_wall.log >> $HOME/tmp/logs/rem_wall.log"
 
 # finally apply layouts
-exec --no-startup-id "i3-msg 'workspace og; append_layout /home/mahmood/Dropbox/configs/i3/workspace-og.json'"
+# exec --no-startup-id "i3-msg 'workspace og; append_layout /home/mahmood/Dropbox/configs/i3/workspace-og.json'"
 # TODO: Add more auto layout things
 
 # Start i3bar to display a workspace bar (plus the system information i3status
