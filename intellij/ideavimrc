@@ -54,6 +54,7 @@ nmap <leader>xx <Action>(CloseContent)
 nmap <leader>xa <Action>(CloseAllEditors)
 nmap <leader>xo <Action>(CloseAllEditorsButActive)
 nmap <leader>xp <Action>(CloseAllUnpinnedEditors)
+nmap <leader>vr <Action>(IdeaVim.ReloadVimRc.reload)
 
 
 " string manipulate (required idea plugin: String Manipulation)
@@ -61,3 +62,12 @@ nmap <leader>cc <Action>(StringManipulation.ToSnakeCaseOrCamelCase)
 nmap <leader>ss <Action>(osmedile.intellij.stringmanip.PopupChoiceAction)
 
 set surround
+" set which-key
+" set timeoutlen=5000
+"
+
+" set multicursor
+" also you can map commands, for example:
+" map q <Plug>(multicursor-ms/)
+" map z <Plug>(multicursor-mcv)
+" map Z <Plug>(multicursor-mcr)

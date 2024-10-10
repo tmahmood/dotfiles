@@ -38,7 +38,7 @@ export CHROME_EXECUTABLE=/opt/google/chrome/chrome
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export EDITOR=vim
 export TERM=xterm-256color
-export TERMINAL=tilix
+export TERMINAL=wezterm
 
 #
 # HLEDGER FILE
@@ -65,7 +65,8 @@ alias phpunittap="phpunit -vvv --color=always --tap"
 alias jrnldate="date +\"%d %h, %a\""
 alias taskcn="task context none"
 alias t="task add"
-
+alias u22="ssh 192.168.1.134"
+alias crossroads="ssh 192.168.1.152"
 ## OH MY ZSH configs
 # export ZSH=/usr/share/oh-my-zsh
 # export ZSH_CUSTOM=~/.oh-my-zsh/

@@ -35,7 +35,16 @@ Plug 'morhetz/gruvbox'
 Plug 'mbbill/undotree'
 Plug 'liuchengxu/vista.vim'
 Plug 'mhinz/vim-signify'
-
+Plug 'nanotech/jellybeans.vim'
+Plug 'gertjanreynaert/cobalt2-vim-theme'
+Plug 'gkjgh/cobalt'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'cocopon/iceberg.vim'
+Plug 'ayu-theme/ayu-vim'
+Plug 'whatyouhide/vim-gotham'
+Plug 'fenetikm/falcon'
+Plug 'Rigellute/rigel'
+Plug 'sainnhe/everforest'
 call plug#end()
 
 
@@ -470,7 +479,7 @@ if has("gui_running")
 else
     set t_Co=256
     set termguicolors
-    colorscheme gruvbox
+    colorscheme everforest
 endif
 " }}}
 
