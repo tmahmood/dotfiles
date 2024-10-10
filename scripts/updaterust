@@ -1,0 +1,14 @@
+#!/bin/bash
+
+rustup update nightly
+# rustup component add rust-analysis rust-src clippy-preview rust-analyzer-preview
+# rustup run nightly cargo install --force racer
+# rustup run nightly cargo install --force clippy
+# rustup run nightly cargo install --force rustfmt-nightly
+rustup run nightly cargo install --force wasm-pack
+rustup run nightly cargo install wasm-bindgen-cli
+rustup run nightly cargo install --force cargo-generate
+rustup run nightly cargo install cargo-expand --force
+rustup run nightly cargo install ripgrep --force
+# cd ~/.vim/pack/ages/start/ || exit
+# ./update_all.sh
