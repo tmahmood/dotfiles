@@ -14,8 +14,12 @@ pacman -S --noconfirm grub efibootmgr tmux
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 
+pacman -S --noconfirm --needed git base-devel networkmanager cmake pacman-contrib reflector
 pacman -S --noconfirm gnome gnome-extra i3 rsync sudo visudo zsh rofi neovim lazygit
-pacman -S --noconfirm --needed git base-devel networkmanager cmake pacman-contrib
+
+systemctl enable reflector.service
+systemctl enable sshd.service
+reflector --latest 15 --sort rate --save /etc/pacman.d/mirrorlist
 
 useradd -m mahmood -G wheel
 passwd mahmood

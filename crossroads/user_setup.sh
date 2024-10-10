@@ -9,9 +9,10 @@ cd repo
 # Install yay
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 yay -Y --gendb
+cd ~/repo
 
 # get my dotfiles
-git clone https://github.com/tmahmood/dotfiles
+git clone git@github.com:tmahmood/dotfiles.git
 
 # fix zsh
 ln -sf ~/repo/dotfiles/zshrc ~/.zshrc
@@ -24,8 +25,8 @@ yaync i3-gnome polybar dropbox jdk-openjdk intellij-idea-ultimate-edition firefo
 rustup toolchain install nightly
 
 ## setup my apps
-git clone https://github.com/tmahmood/taskwarrior-web
-git clone https://github.com/tmahmood/bing-wall-rs
+git clone git@github.com:tmahmood/taskwarrior-web
+git clone git@github.com:tmahmood/bing-wall-rs
 
 cd taskwarrior-web
 cargo build --release
