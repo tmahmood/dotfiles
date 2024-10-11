@@ -3,7 +3,7 @@
 
 ~/bin/bing-wall
 
-find $HOME/Pictures/{Wallpapers,BingWallpaper}/ -type f | shuf -n1 --output ~/tmp/wallpaper.txt 
+find $HOME/Pictures/Wallpapers/ /usr/share/backgrounds $HOME/Pictures/BingWallpaper -type f | shuf -n1 --output ~/tmp/wallpaper.txt 
 
 disp_bk=$DISPLAY
 DISPLAY=$(cat /proc/$$/environ | tr '\0' '\n' | grep '^DISPLAY=' | cut -c 9-)
