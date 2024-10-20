@@ -19,7 +19,7 @@ ln -sf ~/repo/dotfiles/zshrc ~/.zshrc
 
 # just do installs
 alias yaync=yay -S --noconfirm
-yaync i3-gnome polybar dropbox jdk-openjdk intellij-idea-ultimate-edition firefox-nightly-bin ttf-martian-mono ttf-maple copyq feh flameshot keepassxc wezterm atuin starship broot task betterlockscreen dunst dex fzf ripgrep gnome-pomodoro syncthing yazi nyxt libreoffice-fresh obsidian jq p7zip ffmpegthumbnailer fd zoxide chafa tmux-plugin-manager ttf-martian-mono-nerd npm tailwindcss
+yaync gnome gnome-extra i3 rsync sudo visudo zsh rofi vim neovim lazygit sshfs i3-gnome polybar dropbox jdk-openjdk intellij-idea-ultimate-edition firefox-nightly-bin ttf-martian-mono ttf-maple copyq feh flameshot keepassxc wezterm atuin starship broot task betterlockscreen dunst dex fzf ripgrep gnome-pomodoro syncthing yazi nyxt libreoffice-fresh obsidian jq p7zip ffmpegthumbnailer fd zoxide chafa tmux-plugin-manager ttf-martian-mono-nerd npm tailwindcss htop redshift xss-lock signal pacman-contrib gnome-browser-connector
 
 # setup rust
 rustup toolchain install nightly
