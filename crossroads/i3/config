@@ -64,7 +64,7 @@ exec --no-startup-id blueman-applet
 
 exec $HOME/.screenlayout/default.sh
 exec_always $HOME/bin/change_wall.sh
-exec redshift-gtk
+exec redshift-gtk -l 23.772113677140343:90.40864299455157
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
