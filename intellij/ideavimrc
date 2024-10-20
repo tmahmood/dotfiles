@@ -7,7 +7,6 @@ set NERDTree
 set easymotion
 set highlightedyank
 
-nmap <leader><leader> <Action>(IdeaVim.ReloadVimRc.reload)
 nmap <leader>o <Action>(ChooseRunConfiguration)
 
 nmap <leader>g <Action>(VcsGroups)
