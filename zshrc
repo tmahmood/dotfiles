@@ -85,6 +85,8 @@ _systemctl_unit_state() {
 eval "$(direnv hook zsh)"
 source /etc/profile.d/vte.sh
 
+alias ls='eza -F=always -lh --color-scale --no-permissions --no-user'
+
 
 eval "$(zoxide init zsh)"
 # # fzf
