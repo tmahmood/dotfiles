@@ -26,12 +26,14 @@ config.window_decorations = "RESIZE"
 
 -- For example, changing the color scheme:
 -- config.color_scheme = 'iceberg-dark'
+-- config.color_scheme = 'Gruvbox Dark (Gogh)'
+config.color_scheme = 'Mashup Colors (terminal.sexy)'
 -- config.color_scheme = 'Iiamblack (terminal.sexy)'
 -- config.color_scheme = 'darkmoss (base16)'
 -- config.color_scheme = 'Default (dark) (terminal.sexy)'
 -- config.color_scheme = 'Doom Peacock'
 -- config.color_scheme = 'duckbones'
-config.color_scheme = 'Banana Blueberry'
+-- config.color_scheme = 'Banana Blueberry'
 config.use_fancy_tab_bar = false
 config.font = wezterm.font 'MartianMono Nerd Font Mono'
 config.font_size = 12.0

@@ -472,7 +472,7 @@ set background=dark
 set t_ut=
 if has("gui_running")
     set guioptions=acegit
-    colorscheme spaceduck
+    colorscheme everforest
     set guifont=Martian\ Mono\ 12
     set linespace=2
     set guiheadroom=0
