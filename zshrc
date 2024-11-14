@@ -86,6 +86,7 @@ eval "$(direnv hook zsh)"
 source /etc/profile.d/vte.sh
 
 alias ls='eza -F=always -lh --color-scale --no-permissions --no-user'
+alias cat=bat
 
 
 eval "$(zoxide init zsh)"

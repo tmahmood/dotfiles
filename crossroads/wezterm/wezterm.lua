@@ -27,13 +27,14 @@ config.window_decorations = "RESIZE"
 -- For example, changing the color scheme:
 -- config.color_scheme = 'iceberg-dark'
 -- config.color_scheme = 'Iiamblack (terminal.sexy)'
-config.color_scheme = 'darkmoss (base16)'
+config.color_scheme = 'Mashup Colors (terminal.sexy)'
+-- config.color_scheme = 'darkmoss (base16)'
 -- config.color_scheme = 'Default (dark) (terminal.sexy)'
 -- config.color_scheme = 'Doom Peacock'
 -- config.color_scheme = 'duckbones'
 -- config.color_scheme = 'Banana Blueberry'
 config.use_fancy_tab_bar = false
-config.font = wezterm.font 'Maple Mono NF'
+config.font = wezterm.font 'Martian Mono'
 config.font_size = 12.0
 config.hide_tab_bar_if_only_one_tab=true
 
@@ -45,6 +46,7 @@ config.window_padding = {
   bottom = 0,
 }
 
+-- config.leader = { key = 'a', mods = 'CTRL+SHIFT', timeout_milliseconds = 1000 }
 
 -- and finally, return the configuration to wezterm
 return config

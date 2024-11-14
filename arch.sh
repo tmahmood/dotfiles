@@ -10,11 +10,11 @@ hwclock --systohc
 locale-gen
 echo LANG=en_US.UTF-8 >/etc/locale.conf
 echo $1 >/etc/hostname
-pacman -S --noconfirm grub efibootmgr tmux
+pacman -S --noconfirm grub efibootmgr
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 
-pacman -S --noconfirm --needed git base-devel cmake pacman-contrib reflector networkmanager rsync
+pacman -S --noconfirm --needed git base-devel cmake pacman-contrib reflector networkmanager rsync xsel wakeonlan tmux visidata
 
 systemctl enable reflector.service
 systemctl enable sshd.service
@@ -35,3 +35,5 @@ if [[ $1 -eq "crossroads" ]]; then
 sudo -u mahmood curl -sLO https://github.com/tmahmood/dotfiles/tree/main/crossroads/user_setup.sh
 sudo -u mahmood sh user_setup.sh
 fi
+sudo -u mahmood scripts/other_installs.sh
+
