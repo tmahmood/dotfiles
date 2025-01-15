@@ -281,6 +281,8 @@ assign [title="Steam"] gm
 assign [title="Signal"] fa
 assign [class="Nyxt"] nt
 assign [class="Upwork"] uw
+assign [title="Desktop Takeover"] 8
+
 
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
