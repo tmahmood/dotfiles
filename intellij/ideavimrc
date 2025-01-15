@@ -3,7 +3,6 @@ set ideastatusicon=gray
 set number relativenumber
 set idearefactormode=keep
 let mapleader=' '
-set NERDTree
 set easymotion
 set highlightedyank
 
@@ -61,8 +60,8 @@ nmap <leader>cc <Action>(StringManipulation.ToSnakeCaseOrCamelCase)
 nmap <leader>ss <Action>(osmedile.intellij.stringmanip.PopupChoiceAction)
 
 set surround
-" set which-key
-" set timeoutlen=5000
+set which-key
+set timeoutlen=5000
 "
 
 " set multicursor
