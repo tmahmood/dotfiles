@@ -464,6 +464,7 @@ endif
 let g:airline_symbols.colnr =  ' ⣾ '
 let g:airline_symbols.linenr =  ' ⣾ '
 let g:airline_symbols.maxlinenr = ' '
+set nocursorcolumn
 
 
 " {{{ themeing
