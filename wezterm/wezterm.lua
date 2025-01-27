@@ -37,9 +37,10 @@ config.window_decorations = "RESIZE"
 -- config.color_scheme = 'Banana Blueberry'
 config.color_scheme = 'Tokyo Night'
 config.use_fancy_tab_bar = false
-config.font = wezterm.font '0xProto Nerd Font'
-config.font_size = 13.0
--- config.hide_tab_bar_if_only_one_tab=true
+config.font = wezterm.font 'Departure Mono'
+-- config.font = wezterm.font '0xProto Nerd Font'
+config.font_size = 11.0
+config.hide_tab_bar_if_only_one_tab=true
 
 scrollback_lines = 10000
 config.window_padding = {

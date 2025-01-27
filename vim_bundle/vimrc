@@ -1,7 +1,7 @@
 
 call plug#begin()
 Plug 'mhinz/vim-startify'
-Plug 'ycm-core/YouCompleteMe'
+Plug 'girishji/vimcomplete'
 Plug 'vim-scripts/darkbone.vim'
 Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
