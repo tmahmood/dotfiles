@@ -33,8 +33,10 @@ def was_nvidia_updated():
     uptime = get_uptime()
     package_status = subprocess.run(["pacman", "-Q", "nvidia", "-ki"], capture_output=True)
     # there would be one line
-    date_installed_line: str = next(filter(lambda x: x.startswith('Install Date'),
-                                           package_status.stdout.decode('utf-8').splitlines()))
+    try:
+        date_installed_line: str = next(filter(lambda x: x.startswith('Install Date'), package_status.stdout.decode('utf-8').splitlines()))
+    except Exception:
+        return False
     date_installed_str = date_installed_line.split(':', 1).pop().strip()
     date_installed = datetime.datetime.strptime(date_installed_str, '%a %d %b %Y %H:%M:%S %p %Z')
     return date_installed.timestamp() > uptime

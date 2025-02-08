@@ -2,7 +2,6 @@
 #
 # Update stable branch first
 rustup update stable
-
 rustup update nightly
 # rustup component add rust-analysis rust-src clippy-preview rust-analyzer-preview
 # rustup run nightly cargo install --force racer

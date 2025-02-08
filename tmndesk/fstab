@@ -1,0 +1,25 @@
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+# <file system> <dir> <type> <options> <dump> <pass>
+# UUID=c4897d16-c65e-48a9-beed-8ce5fa8b6dc2
+/dev/nvme0n1p2      	/         	ext4      	rw,relatime	0 1
+
+# OLD HOME
+/dev/disk/by-uuid/1401b8c7-550f-44ab-a200-112a3312f613 /home auto nosuid,nodev,nofail,x-gvfs-show 0 0
+/dev/disk/by-uuid/dbfd21d7-1672-4c12-a80d-a499030769a8 /var auto nosuid,nodev,nofail,x-gvfs-show 0 0
+
+# OLD VAR
+/dev/disk/by-uuid/33d2cb74-276c-4478-b06f-d7eb50fadfbe /media/things auto nosuid,nodev,nofail,x-gvfs-show 0 0
+/dev/disk/by-uuid/c9be45ec-cbf7-44bd-9ef9-c0a64a52779a /media/dl auto nosuid,nodev,nofail,x-gvfs-show 0 0
+# /dev/disk/by-uuid/5b22f1bf-30c9-4567-b772-c4f3ef3553d0 /media/projects auto nosuid,nodev,nofail,x-gvfs-show,x-gvfs-name=projects 0 0
+
+/dev/disk/by-uuid/ccf24efe-dc9b-4bb1-9a15-972417055c9e /media/archive auto nosuid,nodev,nofail,x-gvfs-show 0 0
+
+# UUID=4A37-2320
+/dev/nvme0n1p1      	/efi      	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
+
+# UUID=4889d220-7d1a-4cb7-ab15-726091dfadff
+/dev/nvme0n1p3      	/media/steam	ext4      	rw,relatime	0 2
+
+/var/cache/swapfile	swap	swap	x-systemd.after=/var	0	0

@@ -1,0 +1,7 @@
+
+# Wasmer
+export WASMER_DIR="/home/mahmood/.wasmer"
+[ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
+[ -n "$TMUX" ] && export TERM=screen-256color
+DEBIAN_PREVENT_KEYBOARD_CHANGES=yes
+##

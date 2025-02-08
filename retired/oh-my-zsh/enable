@@ -1,0 +1,12 @@
+
+## OH MY ZSH configs
+# export ZSH=/usr/share/oh-my-zsh
+# export ZSH_CUSTOM=~/.oh-my-zsh/
+# export ZSH_CACHE_DIR=~/.oh-my-zsh/cache/
+# plugins=(
+#     git
+#     poetry
+# )
+# AUTO_CD=false
+# DISABLE_AUTO_UPDATE="true"
+# source $ZSH/oh-my-zsh.sh

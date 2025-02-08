@@ -35,14 +35,8 @@ export TERMINAL=wezterm
 
 #
 # HLEDGER FILE
-export LEDGER_FILE=~/OneDrive/Documents/finance/2023.journal 
+export LEDGER_FILE=~/OneDrive/Documents/finance/2025.journal 
 #
-# Wasmer
-export WASMER_DIR="/home/mahmood/.wasmer"
-[ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
-[ -n "$TMUX" ] && export TERM=screen-256color
-DEBIAN_PREVENT_KEYBOARD_CHANGES=yes
-##
 setopt autopushd pushdsilent pushdtohome
 ## Remove duplicate entries
 setopt pushdignoredups
@@ -60,17 +54,6 @@ alias taskcn="task context none"
 alias t="task add"
 alias u22="ssh 192.168.1.134"
 alias crossroads="ssh 192.168.1.152"
-## OH MY ZSH configs
-# export ZSH=/usr/share/oh-my-zsh
-# export ZSH_CUSTOM=~/.oh-my-zsh/
-# export ZSH_CACHE_DIR=~/.oh-my-zsh/cache/
-# plugins=(
-#     git
-#     poetry
-# )
-# AUTO_CD=false
-# DISABLE_AUTO_UPDATE="true"
-# source $ZSH/oh-my-zsh.sh
 
 if [ -n "$JEDITERM_SOURCE" ]
 then
@@ -90,7 +73,7 @@ alias cat=bat
 
 
 eval "$(zoxide init zsh)"
-# # fzf
+# fzf
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 source /home/mahmood/.config/broot/launcher/bash/br

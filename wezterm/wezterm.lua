@@ -19,7 +19,7 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
-config.window_decorations = "RESIZE"
+-- config.window_decorations = "RESIZE"
 -- config.front_end = "WebGpu"
 -- config.enable_wayland = false
 
