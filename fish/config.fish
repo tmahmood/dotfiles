@@ -9,5 +9,4 @@ if status is-interactive
     alias pkgi="yay -Qq | fzf --preview 'yay -Qil {}' --height=97% --layout=reverse --bind 'enter:execute(yay -Qil {} | less)'"
 
     set -g fish_key_bindings fish_vi_key_bindings
-
 end
