@@ -271,6 +271,9 @@ bindsym $mod+m exec i3-input -F 'move container to workspace %s' -l 2 -P 'Move t
 bindsym $mod+Tab workspace back_and_forth
 bindsym $mod+Shift+Tab move container to output next; focus output next
 
+bindsym $mod+b focus output next
+bindsym $mod+Shift+b move container to output next; focus output next
+
 
 # ╔═╗┌─┐┌─┐┬┌─┐┌┐┌  ╦ ╦╦╔═╔═╗
 # ╠═╣└─┐└─┐││ ┬│││  ║║║╠╩╗╚═╗
