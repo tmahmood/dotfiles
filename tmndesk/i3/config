@@ -21,7 +21,7 @@ popup_during_fullscreen smart
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Maple Mono SC NF 10
+font pango:Departure Mono 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -177,9 +177,23 @@ set $ws08 "8"
 set $ws09 "9"
 set $ws10 "10"
 
-set $cl1 "rd"
-set $cl2 "an"
+set $cl1 "bh"
+set $cl2 "ot"
 set $cl3 "jg"
+set $cl4 "bc"
+set $cl5 "dc"
+
+set $cl1_1 "a0"
+set $cl2_1 "a1"
+set $cl3_1 "a2"
+set $cl4_1 "a3"
+set $cl5_1 "a4"
+
+set $cl1_2 "b0"
+set $cl2_2 "b1"
+set $cl3_2 "b2"
+set $cl4_2 "b3"
+set $cl5_2 "b4"
 
 # communication
 set $ws11 "cm"
@@ -207,38 +221,49 @@ workspace $ws02 output $o1
 workspace $ws03 output $o1
 workspace $ws04 output $o1
 workspace $ws05 output $o1
+
 workspace $ws06 output $o2
 workspace $ws07 output $o2
 workspace $ws08 output $o2
 workspace $ws09 output $o2
-
 workspace $ws10 output $o2
 
 workspace $ws11 output $o1
 workspace $ws12 output $o2
-
 workspace $ws13 output $o1
 workspace $ws20 output $o2
-
 workspace $ws14 output $o1
-workspace $ws15 output $o2
 
+workspace $ws15 output $o2
 workspace $ws16 output $o1
 workspace $ws17 output $o2
-
 workspace $ws18 output $o1
 workspace $ws19 output $o2
 
 # client workspaces
-# NOTE: This may change
+
 workspace $cl1 output $o1
 workspace $cl2 output $o1
 workspace $cl3 output $o1
+
+workspace $cl1_1 output $o2
+workspace $cl2_1 output $o2
+workspace $cl3_1 output $o2
+workspace $cl4_1 output $o2
+workspace $cl5_1 output $o2
+      
+workspace $cl1_2 output $o3
+workspace $cl2_2 output $o3
+workspace $cl3_2 output $o3
+workspace $cl4_2 output $o3
+workspace $cl5_2 output $o3
+
 # other things
 workspace "gm" output $o1
 workspace "og" output $o2
+
 workspace "nt" output $o3
-workspace "uw" output $o2
+workspace "uw" output $o3
 workspace "fa" output $o2
 
 # switch to workspace

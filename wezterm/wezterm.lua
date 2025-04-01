@@ -19,9 +19,14 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
--- config.window_decorations = "RESIZE"
+config.window_decorations = "TITLE | RESIZE"
 -- config.front_end = "WebGpu"
--- config.enable_wayland = false
+config.enable_wayland = true
+
+config.inactive_pane_hsb = {
+  saturation = 0.9,
+  brightness = 0.8,
+}
 
 -- This is where you actually apply your config choices
 
@@ -37,17 +42,18 @@ config.color_scheme = 'darkmoss (base16)'
 -- config.color_scheme = 'Banana Blueberry'
 -- config.color_scheme = 'Tokyo Night'
 config.use_fancy_tab_bar = false
-config.font = wezterm.font 'Departure Mono'
+config.font = wezterm.font 'Maple Mono'
+-- config.font = wezterm.font 'Departure Mono'
 -- config.font = wezterm.font '0xProto Nerd Font'
-config.font_size = 11.0
+config.font_size = 12.0
 config.hide_tab_bar_if_only_one_tab=true
 
 scrollback_lines = 10000
 config.window_padding = {
-  left = 0,
-  right = 0,
-  top = 0,
-  bottom = 0,
+  left = 2,
+  right = 2,
+  top = 2,
+  bottom = 2,
 }
 
 -- Show which key table is active in the status area

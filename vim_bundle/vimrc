@@ -45,6 +45,7 @@ Plug 'whatyouhide/vim-gotham'
 Plug 'fenetikm/falcon'
 Plug 'Rigellute/rigel'
 Plug 'sainnhe/everforest'
+Plug 'jbmorgado/vim-pine-script'
 call plug#end()
 
 
