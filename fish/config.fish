@@ -3,6 +3,7 @@ if status is-interactive
     zoxide init fish | source
     starship init fish | source
     direnv hook fish | source
+    set -gx PATH $PATH ~/bin
 
     alias ls='eza -F=always -lh --color-scale'
     alias cat=bat
