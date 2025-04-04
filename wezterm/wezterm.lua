@@ -19,7 +19,7 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
-config.window_decorations = "TITLE | RESIZE"
+config.window_decorations = "RESIZE"
 -- config.front_end = "WebGpu"
 config.enable_wayland = true
 
@@ -35,7 +35,8 @@ config.inactive_pane_hsb = {
 -- config.color_scheme = 'Gruvbox Dark (Gogh)'
 -- config.color_scheme = 'Mashup Colors (terminal.sexy)'
 -- config.color_scheme = 'Iiamblack (terminal.sexy)'
-config.color_scheme = 'darkmoss (base16)'
+-- config.color_scheme = 'darkmoss (base16)'
+config.color_scheme = 'Railscasts (base16)'
 -- config.color_scheme = 'Default (dark) (terminal.sexy)'
 -- config.color_scheme = 'Doom Peacock'
 -- config.color_scheme = 'duckbones'
