@@ -46,6 +46,7 @@ Plug 'fenetikm/falcon'
 Plug 'Rigellute/rigel'
 Plug 'sainnhe/everforest'
 Plug 'jbmorgado/vim-pine-script'
+Plug 'vimwiki/vimwiki'
 call plug#end()
 
 
@@ -448,7 +449,7 @@ augroup END
 let g:startify_skiplist = [
             \ 'tmp/',
             \ ]
-
+let g:vimwiki_list = [{'path': '~/Dropbox/notes/Obsidian', 'ext': 'md'}]
 
 let g:airline_powerline_fonts = 1
 let g:airline_experimental = 1
