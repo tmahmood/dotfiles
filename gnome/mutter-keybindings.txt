@@ -1,0 +1,4 @@
+[/]
+cancel-input-capture=['<Super><Shift>Escape']
+toggle-tiled-left=['<Super>comma']
+toggle-tiled-right=['<Super>period']

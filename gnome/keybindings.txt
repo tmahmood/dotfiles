@@ -1,0 +1,17 @@
+[/]
+control-center=['<Super>minus']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']
+max-screencast-length=uint32 600
+rotate-video-lock-static=['<Super>o', 'XF86RotationLockToggle']
+screensaver=['<Super>BackSpace']
+www=['<Control><Super>Home']
+
+[custom-keybindings/custom0]
+binding='<Super>Return'
+command='wezterm'
+name='Terminal'
+
+[custom-keybindings/custom1]
+binding='<Super>slash'
+command='sh /home/mahmood/.screenlayout/three_monitor.sh'
+name='Reset Monitor'
