@@ -21,13 +21,14 @@ end
 
 config.window_decorations = "RESIZE"
 -- config.front_end = "WebGpu"
-config.enable_wayland = true
+-- config.enable_wayland = true
 
 config.inactive_pane_hsb = {
   saturation = 0.9,
   brightness = 0.8,
 }
 
+config.term = 'wezterm'
 -- This is where you actually apply your config choices
 
 -- For example, changing the color scheme:

@@ -1,11 +1,12 @@
 set ideajoin
 set ideastatusicon=gray
-set number relativenumber
 set idearefactormode=keep
-let mapleader=' '
 set easymotion
 set highlightedyank
+set surround
 
+let mapleader=' '
+set number relativenumber
 nmap <leader>o <Action>(ChooseRunConfiguration)
 
 nmap <leader>g <Action>(VcsGroups)
@@ -20,6 +21,7 @@ nmap <leader>n <Action>(WelcomeScreen.CreateNewProject)
 nmap <leader>m <Action>($LRU)
 nmap <leader>b <Action>(RecentFiles)
 nmap <leader>f <Action>(FileStructurePopup)
+nmap ,e <Action>(ActivateProjectToolWindow)
 
 nmap ]C <Action>(VcsShowNextChangeMarker)
 nmap [C <Action>(VcsShowPrevChangeMarker)
@@ -33,20 +35,25 @@ nmap <leader>t <Action>(ActivateTODOToolWindow)
 " []
 nmap [b <Action>(PreviousTab)
 nmap ]b <Action>(NextTab)
+
 nmap [g <Action>(GotoPreviousError)
 nmap ]g <Action>(GotoNextError)
+
 nmap [u <Action>(GotoPrevElementUnderCaretUsage)
 nmap ]u <Action>(GotoNextElementUnderCaretUsage)
+
 nmap [o <Action>(PreviousOccurence)
 nmap ]o <Action>(NextOccurence)
-nmap [m <Action>(MethodUp)
-nmap ]m <Action>(MethodDown)
+
+nmap [[ <Action>(MethodUp)
+nmap ]] <Action>(MethodDown)
+
 nmap [c <Action>(JumpToLastChange)
 nmap ]c <Action>(JumpToNextChange)
 
 nmap <leader>z <Action>(ToggleDistractionFreeMode)
-nmap <leader>w <Action>(HideAllWindows)
-nmap <leader>ww <Action>(EditSourceInNewWindow)
+nmap <leader>wh <Action>(HideAllWindows)
+nmap <leader>wn <Action>(EditSourceInNewWindow)
 nmap <leader>wx <Action>(MoveEditorToOppositeTabGroup)
 nmap <leader>xx <Action>(CloseContent)
 nmap <leader>xa <Action>(CloseAllEditors)
@@ -54,18 +61,10 @@ nmap <leader>xo <Action>(CloseAllEditorsButActive)
 nmap <leader>xp <Action>(CloseAllUnpinnedEditors)
 nmap <leader>vr <Action>(IdeaVim.ReloadVimRc.reload)
 
+nmap <leader>ua <Action>(UnsplitAll)
+
 
 " string manipulate (required idea plugin: String Manipulation)
 nmap <leader>cc <Action>(StringManipulation.ToSnakeCaseOrCamelCase)
 nmap <leader>ss <Action>(osmedile.intellij.stringmanip.PopupChoiceAction)
 
-set surround
-set which-key
-set timeoutlen=5000
-"
-
-" set multicursor
-" also you can map commands, for example:
-" map q <Plug>(multicursor-ms/)
-" map z <Plug>(multicursor-mcv)
-" map Z <Plug>(multicursor-mcr)

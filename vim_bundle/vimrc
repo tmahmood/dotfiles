@@ -47,6 +47,7 @@ Plug 'Rigellute/rigel'
 Plug 'sainnhe/everforest'
 Plug 'jbmorgado/vim-pine-script'
 Plug 'vimwiki/vimwiki'
+Plug 'arzg/vim-colors-xcode'
 call plug#end()
 
 
@@ -234,15 +235,11 @@ nnoremap <RIGHT> :UndotreeToggle<CR>
 " update tag file/headless make/display errors
 map <Leader>c :Copen<cr>
 map <Leader>e :Errors<cr>
-map <Leader>k :make<cr>
-map <Leader>d :Make! dev<cr>
 " Prints date and time
 map <leader>dt :r! date +"// +\%Y-\%m-\%d \%H:\%M:\%S"<cr><cr>
-map <leader>dT :r! date +"%d %h, %a"<cr><cr>
+map <leader>dT :r! date +"\# \%d \%h, \%a, \%Y"<cr><cr>
 "}}}
-"
-" Activate Goya with \<Space>
-"
+ 
 nnoremap <Leader>\ :Goyo<CR>
 map ,e <esc>:NERDTreeToggle<CR>
 
@@ -475,14 +472,15 @@ set background=dark
 set t_ut=
 if has("gui_running")
     set guioptions=acegit
-    colorscheme everforest
-    set guifont=Martian\ Mono\ 12
+    colorscheme xcodedarkhc
+    set guifont=Maple\ Mono\ 12
     set linespace=2
     set guiheadroom=0
 else
     set t_Co=256
     set termguicolors
-    colorscheme everforest
+    colorscheme xcodedarkhc
+    " colorscheme xcode
 endif
 " }}}
 
