@@ -3,3 +3,4 @@ pub_keys/
 vim_bundle/plugged
 oh-my-zsh/cache/
 retired/old_cfg
+lnav/view*.json
