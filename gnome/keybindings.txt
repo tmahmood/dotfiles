@@ -1,6 +1,6 @@
 [/]
 control-center=['<Super>minus']
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/']
 max-screencast-length=uint32 600
 rotate-video-lock-static=['<Super>o', 'XF86RotationLockToggle']
 screensaver=['<Super>BackSpace']
@@ -8,7 +8,7 @@ www=['<Control><Super>Home']
 
 [custom-keybindings/custom0]
 binding='<Super>Return'
-command='ptyxis  --new-window'
+command='ghostty'
 name='Terminal'
 
 [custom-keybindings/custom1]
@@ -20,8 +20,3 @@ name='Reset Monitor'
 binding='<Shift><Super>slash'
 command='xset dpms force off'
 name='Turn off monitor on xorg'
-
-[custom-keybindings/custom3]
-binding='<Shift><Super>Return'
-command='ptyxis'
-name='Existing Terminal'
