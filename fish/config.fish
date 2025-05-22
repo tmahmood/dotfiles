@@ -6,6 +6,7 @@ if status is-interactive
     atuin init fish | source
     set -g TERM xterm-256color
     set -gx PATH $PATH ~/bin
+    set -gx PATH $PATH ~/.cargo/bin
     set -gx TERMINAL ptyxis
     set -gx EDITOR vim
 
