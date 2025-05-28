@@ -48,6 +48,7 @@ Plug 'sainnhe/everforest'
 Plug 'jbmorgado/vim-pine-script'
 Plug 'vimwiki/vimwiki'
 Plug 'arzg/vim-colors-xcode'
+Plug 'terryma/vim-multiple-cursors'
 call plug#end()
 
 
