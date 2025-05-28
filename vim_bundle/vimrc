@@ -516,7 +516,7 @@ set t_ut=
 if has("gui_running")
     set guioptions=acegit
     colorscheme xcodedarkhc
-    set guifont=Maple\ Mono\ 12
+    set guifont=MartianMono\ NF\ Cond\ 12
     set linespace=2
     set guiheadroom=0
 else
