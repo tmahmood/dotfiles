@@ -108,7 +108,7 @@ set expandtab
 set shiftwidth=4
 set textwidth=0
 set formatoptions+=t
-set wrapmargin=79
+set wrapmargin=140
 set gdefault
 set backspace=indent,eol,start
 set number

@@ -1,4 +1,9 @@
+[opener]
+lnav = [
+    { run = '$TERMINAL --new-window -- lnav "$@"', for="unix", desc="lnav" }
+]
 [open]
 prepend_rules = [
-	{ name = "*.log", use = "lnav", block = true },
+	{ name = "*.log", use = "lnav", block = true, desc = "lnav" },
 ]
+
