@@ -1,6 +1,7 @@
 
 call plug#begin()
 Plug 'mhinz/vim-startify'
+Plug 'mivok/vimtodo'
 Plug 'girishji/vimcomplete'
 Plug 'vim-scripts/darkbone.vim'
 Plug 'preservim/nerdtree'

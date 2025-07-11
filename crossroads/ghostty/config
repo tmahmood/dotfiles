@@ -26,7 +26,7 @@ theme = "Horizon"
 
 font-family = "MartianMono NF Cond"
 bold-is-bright = false
-font-size = 14
+font-size = 12
 
 gtk-titlebar = false
 gtk-single-instance = true
