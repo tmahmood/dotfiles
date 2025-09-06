@@ -269,7 +269,9 @@ simplified_ui false
 // Default: default
 // 
 // theme "atelier-sulphurpool"
-theme "vesper"
+// theme "vesper"
+// theme "ao"
+theme "ansi"
  
 // Choose the base input mode of zellij.
 // Default: normal
