@@ -10,9 +10,10 @@ if status is-interactive
     set -gx TERMINAL ptyxis
     set -gx EDITOR vim
 
-    alias ls='eza -F=always -lh --color-scale'
+    alias ls='eza -F=always --icons always --color-scale'
     alias cat=bat
     alias pkgi="yay -Qq | fzf --preview 'yay -Qil {}' --height=97% --layout=reverse --bind 'enter:execute(yay -Qil {} | less)'"
+    fish_add_path "/home/mahmood/.local/bin"
 
     set -g fish_key_bindings fish_vi_key_bindings
 end

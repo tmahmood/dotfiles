@@ -13,4 +13,4 @@ echo "$XX" | DISPLAY="$USR_DISPLAY" xargs feh --bg-fill
 DISPLAY=$disp_bk
 echo "$XX"
 # generates the color
-wal -s -t -n -i "$XX"
+# wal -s -t -n -i "$XX"

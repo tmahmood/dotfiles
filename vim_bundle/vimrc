@@ -50,6 +50,8 @@ Plug 'jbmorgado/vim-pine-script'
 Plug 'vimwiki/vimwiki'
 Plug 'arzg/vim-colors-xcode'
 Plug 'terryma/vim-multiple-cursors'
+
+Plug 'embark-theme/vim'
 call plug#end()
 
 
@@ -492,6 +494,7 @@ let g:startify_skiplist = [
             \ 'tmp/',
             \ ]
 let g:vimwiki_list = [{'path': '~/Dropbox/notes/Obsidian', 'ext': 'md'}]
+let g:vimwiki_auto_chdir = 1
 
 let g:airline_powerline_fonts = 1
 let g:airline_experimental = 1
@@ -524,7 +527,7 @@ if has("gui_running")
 else
     set t_Co=256
     set termguicolors
-    colorscheme xcodedarkhc
+    colorscheme embark
     " colorscheme xcode
 endif
 " }}}
