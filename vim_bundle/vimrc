@@ -2,12 +2,10 @@
 call plug#begin()
 Plug 'mhinz/vim-startify'
 Plug 'mivok/vimtodo'
-Plug 'girishji/vimcomplete'
 Plug 'vim-scripts/darkbone.vim'
 Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'honza/vim-snippets'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'w0rp/ale'
@@ -15,7 +13,6 @@ Plug 'mattn/emmet-vim'
 Plug 'godlygeek/csapprox'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-"Plug 'SirVer/ultisnips'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'easymotion/vim-easymotion'
@@ -50,6 +47,10 @@ Plug 'jbmorgado/vim-pine-script'
 Plug 'vimwiki/vimwiki'
 Plug 'arzg/vim-colors-xcode'
 Plug 'terryma/vim-multiple-cursors'
+
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'girishji/vimcomplete'
 
 Plug 'embark-theme/vim'
 call plug#end()
@@ -255,7 +256,7 @@ let g:indent_guides_start_level = 2
 let g:indent_guides_auto_colors = 0
 
 
-"let g:UltiSnipsSnippetDirectories=["UltiSnips", "snips"]
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "snips"]
 "
 "" make YCM compatible with UltiSnips (using supertab)
 "let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
@@ -263,9 +264,9 @@ let g:indent_guides_auto_colors = 0
 "let g:SuperTabDefaultCompletionType = '<C-n>'
 "
 "" better key bindings for UltiSnipsExpandTrigger
-"let g:UltiSnipsExpandTrigger = "<tab>"
-"let g:UltiSnipsJumpForwardTrigger = "<tab>"
-"let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 let g:jsx_ext_required = 0
 

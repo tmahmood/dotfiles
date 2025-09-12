@@ -9,6 +9,7 @@ if status is-interactive
     set -gx PATH $PATH ~/.cargo/bin
     set -gx TERMINAL ptyxis
     set -gx EDITOR vim
+    set -gx VCPKG ~/vcpkg
 
     alias ls='eza -F=always --icons always --color-scale'
     alias cat=bat
