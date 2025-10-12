@@ -14,19 +14,21 @@
 #theme = "miasma"
 #theme = "matrix"
 #theme = "Hopscotch.256"
-theme = "Horizon"
+#theme = "Horizon"
 #theme = "GruvboxDark"
 #theme = "GruvboxDarkHard"
 #theme = "Everforest Dark - Hard"
 #theme = "CutiePro"
 #theme = "catppuccin-mocha"
 #theme = "Chalk"
+#theme = "Ayu"
+theme = "Flexoki Dark"
 #theme = "BirdsOfParadise"
 #background-opacity = 0.80
 
 font-family = "MartianMono NF Cond"
 bold-is-bright = false
-font-size = 18
+font-size = 15
 
 gtk-titlebar = false
 gtk-single-instance = true

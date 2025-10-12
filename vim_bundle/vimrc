@@ -95,7 +95,7 @@ else
     set directory=~/tmp/vim/swp
     set undodir=~/tmp/vim/undo
     set backupdir=~/tmp/vim/backups
-    set shell=/bin/zsh
+    set shell=/bin/fish
 endif
 " }}}
 

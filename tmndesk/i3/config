@@ -14,6 +14,7 @@
 
 
 set $mod Mod4
+set $term ptyxis
 
 workspace_auto_back_and_forth yes
 popup_during_fullscreen smart
@@ -61,6 +62,7 @@ exec --no-startup-id nm-applet
 
 # bluetooth device manager
 exec --no-startup-id blueman-applet
+# exec signal-desktop --pasword-store='gnome-libsecret'
 
 exec $HOME/.screenlayout/three_monitor.sh
 exec_always $HOME/bin/change_wall.sh
@@ -86,7 +88,8 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec ptyxis --new-window
+bindsym $mod+Return exec $term --new-window
+# bindsym $mod+Return exec ghostty
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec --no-startup-id dmenu_run
@@ -214,7 +217,7 @@ set $ws20 "ms"
 
 set $o1 "DP-0"
 set $o2 "HDMI-0"
-set $o3 "HDMI-2"
+set $o3 "HDMI-1"
 
 workspace $ws01 output $o1
 workspace $ws02 output $o1
@@ -382,7 +385,7 @@ mode "$power_mode" {
     bindsym $mod+x mode "default"
 }
 
-set $mode_launcher [f]x [i]j f[s] [k]p [h]m [c]q [b]3d k[r] [v]im [y]azi vbo[x]
+set $mode_launcher [f]x [i]j f[s] [k]p [h]m [c]q [b]3d k[r] [v]im [y]azi vbo[x] [u]w
 
 mode "$mode_launcher" {
     bindsym i exec intellij-idea-ultimate-edition, mode "default"
@@ -395,8 +398,8 @@ mode "$mode_launcher" {
     bindsym l exec gnome-calculator, mode "default"
     bindsym b exec blender, mode "default"
     bindsym r exec krita, mode "default"
-    bindsym v exec ptyxis -- vim, mode "default"
-    bindsym y exec ptyxis -- yazi, mode "default"
+    bindsym v exec $term -- vim, mode "default"
+    bindsym y exec $term -- yazi, mode "default"
     bindsym x exec virtualbox, mode "default"
 
     # back to normal: Enter or Escape or $mod+r
@@ -439,8 +442,8 @@ bindsym $mod+Shift+Ctrl+w exec "$HOME/bin/change_wall.sh > ~/tmp/logs/change_wal
 bindsym $mod+Shift+Ctrl+d exec "cat $HOME/tmp/logs/change_wall.log >> $HOME/tmp/logs/rem_wall.log"
 
 # finally apply layouts
-exec --no-startup-id "i3-msg 'workspace og; append_layout /home/mahmood/Dropbox/configs/tmndesk/i3/workspace-og.json'"
-exec --no-startup-id "i3-msg 'workspace nt; append_layout /home/mahmood/Dropbox/configs/tmndesk/i3/workspace-nt.json'"
+# exec --no-startup-id "i3-msg 'workspace og; append_layout /home/mahmood/Dropbox/configs/tmndesk/i3/workspace-og.json'"
+# exec --no-startup-id "i3-msg 'workspace nt; append_layout /home/mahmood/Dropbox/configs/tmndesk/i3/workspace-nt.json'"
 # TODO: Add more auto layout things
 
 # Start i3bar to display a workspace bar (plus the system information i3status
