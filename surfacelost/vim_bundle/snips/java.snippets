@@ -1,0 +1,73 @@
+snippet mem "add class member, setters and getters" b
+
+private ${1:String} ${2:varName};
+
+public void set`!p snip.rv = t[2].title()`($1 $2) {
+    this.$2 = $2;
+}
+
+public $1 get`!p snip.rv = t[2].title()`() {
+    return $2;
+}
+endsnippet
+
+snippet imp_o2m "Import for one to many" b
+import java.util.List;
+import javax.persistence.OneToMany;
+import javax.persistence.CascadeType;
+endsnippet
+
+snippet imp_m2o "Import for many to one" b
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+endsnippet
+
+snippet o2m "One to many relationship" b
+// import javax.persistence.OneToMany;
+@OneToMany(mappedBy="${1:member_in_target}", targetEntity=${2:target}.class, cascade=CascadeType.ALL)
+private List<$2> $2s;
+endsnippet
+
+snippet m2o "Many to one relationship" b
+// import javax.persistence.ManyToMany;
+// import javax.persistence.JoinColumn;
+@ManyToOne(optional=false)
+@JoinColumn(name="${1:column_name}_id", referencedColumnName="id")
+private `!p snip.rv=t[1].title()` $1;
+endsnippet
+
+snippet seq "Sequence Generator" b
+// import javax.persistence.GeneratedValue;
+// import javax.persistence.SequenceGenerator;
+// import javax.persistence.GenerationType;
+@GeneratedValue(strategy = SEQUENCE, generator = "${1:tbl_seq}_generator")
+@SequenceGenerator(name="$1_generator", sequenceName = "$1_seq", allocationSize=50)
+@Column(name = "id", updatable = false, nullable = false)
+
+endsnippet
+
+snippet imp_seq "Import for Sequence Generator" b
+import javax.persistence.GeneratedValue;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.GenerationType;
+import static javax.persistence.GenerationType.SEQUENCE;
+endsnippet
+
+snippet forE "forEach" b
+${1:aList}.forEach(${2:item} -> ${3:});
+endsnippet
+
+snippet gcj_scan "Read from command line, Google Code Jam Format" b
+    void readInput() {
+        Scanner scanner = new Scanner(System.in);
+        String sTimes = scanner.nextLine();
+        int times = Integer.parseInt(sTimes);
+        for (int i = 0; i < times; i++) {
+            String row = scanner.nextLine();
+            Scanner sscan = new Scanner(row);
+            String countedTo = sscan.next();
+            System.out.printf("Case #%d: %d\n", i + 1, doSomething(countedTo));
+        }
+        scanner.close();
+    }
+endsnippet

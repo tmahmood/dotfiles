@@ -1,0 +1,120 @@
+snippet pl "Println" b
+println!("${1:}");
+endsnippet
+
+snippet pv "Println with variable" b
+println!("${1:}", ${2:arg});
+endsnippet
+
+snippet vec "Vector list" b
+let ${1:list_name} = vec![${2}];
+endsnippet
+
+snippet fn "Function"
+${3:pub }fn ${1:function_name}(${2:&self}){
+	${4}
+}
+endsnippet
+
+snippet st "Structure" b
+pub struct ${1:struct_name} {
+	pub ${2:label}: ${3:type},
+	${4}
+}
+endsnippet
+
+snippet stim "Structure with impl" b
+pub struct ${1:struct_name} {
+	${4:label}: ${5:type},
+}
+
+impl $1 {
+	pub fn ${2:function_name}() -> ${3:return_type} {
+	}
+}
+endsnippet
+
+snippet im "Implementation" b
+impl ${1} {
+	pub fn ${2:function_name}() -> ${3:return_type} {
+	}
+}
+endsnippet
+
+snippet tf "Test Function" b
+#[test]
+fn ${1:function_name}() {
+	${2}
+}
+endsnippet
+
+snippet tm "Test Module" b
+#[cfg( test )]
+mod ${1:testing};
+endsnippet
+
+snippet for "For loop" b
+for ${1:item} in &${2:items} {
+	${3:$1}${4}
+}
+endsnippet
+
+snippet match "Match something"
+${1:let resp = }match ${2:check_with} {
+	Ok(v) => v,
+	Err(e) => panic!("${3:Something went wrong! \{\}"}, e)
+};
+${4}
+endsnippet
+
+snippet rl "Read line" b
+let ${1:resp} = match std::io::stdin().read_line(&mut ${2:inptxt}) {
+	Ok(v) => v,
+	Err(e) => panic!("Failed to take input, \{\}", Error::description(&e))
+};
+endsnippet
+
+snippet toi32 "Converts and assignes to int" b
+	let ${1:iData}:i32 = ${2:sData}.parse().unwrap();
+endsnippet
+
+snippet split "Split string" b
+let ${1:listing}:Vec<&str> = ${2:content}.split("${3:\n}").collect();
+endsnippet
+
+snippet mi32 "mutable variable" b
+let mut ${1:var}:${2:i32} = ${3:0};
+endsnippet
+
+snippet let "declear a variable" b
+let ${1:mut}${2: vname}${4::type} = ${3};
+endsnippet
+
+snippet if "if condition" b
+if ${1:left_side} ${2:condition} ${3:right_side} {
+	${4: what_to_do}
+}
+endsnippet
+
+snippet iif "Inline If" b
+let x = if ${1:condition} { ${3:action} }
+endsnippet
+
+snippet rf "Read file" b
+use std::env;
+use std::fs::File;
+use std::io::prelude::*;
+
+fn read_file(filename:String) -> String {
+    // ...snip...
+    println!("In file {}", filename);
+
+    let mut f = File::open(filename).expect("file not found");
+
+    let mut contents = String::new();
+    f.read_to_string(&mut contents)
+        .expect("something went wrong reading the file");
+
+	contents
+}
+endsnippet

@@ -1,0 +1,99 @@
+snippet table "Description" b
+<table class="table table-striped table-bordered">
+	<thead>
+		<tr>
+			<th>${1}</th>
+			<th>${2}</th>
+			<th>${3}</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach(\$${4:$items} as \$${5:item})
+		<tr>
+			<td>\{\{ \$$5->`!p snip.rv=t[1].lower()` \}\}</td>
+			<td>\{\{ \$$5->`!p snip.rv=t[2].lower()` \}\}</td>
+			<td>\{\{ \$$5->`!p snip.rv=t[3].lower()` \}\}</td>
+			<td>
+				<a href="/${6:item}/edit/\{\{ \$$5->id \}\}" class="btn btn-success">
+					<span class="glyphicon glyphicon-edit"></span>
+				</a>
+				<a href="/${6:item}/delete/\{\{ \$$5->id \}\}" class="btn btn-danger">
+					<span class="glyphicon glyphicon-trash"></span>
+				</a>
+			</td>
+		</tr>
+		@endforeach
+	</tbody>
+</table>
+endsnippet
+
+snippet form "New form" b
+<form class="form" method="POST" action="${1}" ${enctype="multipart/form-data">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			${2:FORM HEADING}
+		</div>
+		<div class="panel-body">
+			<!-- form content -->
+
+		</div>
+		<div class="panel-footer">
+			<input type="hidden" value="{{ csrf_token() }}" name="_token">
+			<input class="btn btn-success" type="submit" value="Save">
+		</div>
+	</div>
+</form>
+endsnippet
+
+snippet panel "New Panel" b
+<div class="panel panel-default">
+	<div class="panel-heading">
+		${1:PANEL HEADING}
+	</div>
+	<div class="panel-body">
+		${2:PANEL BODY}
+	</div>
+	<div class="panel-footer">
+		${3:PANEL FOOTER}
+	</div>
+</div>
+endsnippet
+snippet input "input with bootstrap" b
+<div class="form-group">
+	<label for="${1:elmid}">${6}${2:`!p snip.rv=t[1].capitalize().replace('_', ' ')`}</label>
+	<input id="`!p snip.rv=t[1]`" class="form-control"
+		type="${4:text}" name="`!p snip.rv=t[1]`">
+</div>${5:}
+endsnippet
+
+snippet select "select with bootstrap" b
+<div class="form-group">
+	<label for="${1:elmid}">${7}${2:LABEL}</label>
+	<select id="`!p snip.rv=t[1]`" class="form-control" name="`!p snip.rv=t[1]`">
+		<option>-------SELECT-------</option>
+		@foreach($${6:items} as $${7:item})
+		option${8}
+		@endforeach
+	</select>
+</div>
+endsnippet
+
+snippet textarea "input with bootstrap" b
+<div class="form-group">
+	<label for="${1:elmid}">${6}${2:`!p snip.rv=t[1].capitalize().replace('_', ' ')`}</label>
+	<textarea id="${3:`!p snip.rv=t[1]`}" class="form-control" name="${5:`!p snip.rv=t[1]`}"></textarea>
+</div>
+endsnippet
+
+snippet submit "input with bootstrap" b
+<div>
+	<input class="btn btn-success" type="submit" value="${1:Save}">
+</div>
+endsnippet
+
+snippet linkbtn "Link as a button" b
+<a href="${1:#}" class="btn btn-${2:primary}">
+	<span class="glyphicon glyphicon-${3:plus}"></span>
+</a>
+endsnippet

@@ -1,0 +1,251 @@
+snippet $=
+$${1:varname} = ${2:value};
+endsnippet
+
+snippet stc "Static method" !b
+public static function ${1:FUNCATION_NAME}(${2})
+{
+	${3}
+}
+endsnippet
+
+snippet if "If statement" !b
+if (${1:condition}) {
+	${2:action}
+}
+endsnippet
+
+snippet $='
+$${1:varname} = '${2:value}';
+endsnippet
+
+snippet $="
+$${1:varname} = "${2:value}";
+endsnippet
+
+snippet $-
+$${1:object}->${2:member} = $${3:value};
+endsnippet
+
+snippet $-"
+$${1:object}->${2:member} = "${3:value}";
+endsnippet
+
+snippet $["=
+$${1:varname}["$${2:keyname}"] = ${3:value};
+endsnippet
+
+snippet $['=
+$${1:varname}['${2:keyname}'] = ${3:value};
+endsnippet
+
+snippet cilm "CodeIgniter loader" !b
+$this->load->model(${1:model_name});
+endsnippet
+
+snippet >v "debug print variable" !b
+echo "<pre>${1}</pre>";
+endsnippet
+
+snippet >a "debug print array" !b
+echo '<pre>'; print_r (${1}); echo '</pre>';
+endsnippet
+
+snippet <? "debug print variable" !b
+<?=${1}?>
+endsnippet
+
+snippet koctl "Kohana controller" !b
+<?php defined('SYSPATH') OR die('No direct access allowed.');
+
+class Controller_${1}`!p snip.rv=snip.fn.capitalize().split('.')[0]` extends ${2:Controller_Auth} {
+
+	public $auth_required = ${2:FALSE};
+
+	public $secure_actions = array( ${3:'index' => 'login',
+										'list' => 'login',
+										'add' => 'login',
+										'edit'=>'login',
+										'delete'=>'login'});
+
+	public function action_index()
+	{
+	}
+
+	public function action_list()
+	{
+	}
+
+	public function action_add()
+	{
+	}
+
+	public function action_edit()
+	{
+	}
+
+	public function action_delete()
+	{
+	}
+} // end of controller
+endsnippet
+
+snippet komdl "Kohana Model" !b
+<?php defined('SYSPATH') OR die('No direct access allowed.');
+
+class Model_${1:`!p snip.rv=snip.fn.capitalize().split('.')[0]`} extends ${2:ORM} {
+} // end of model
+endsnippet
+
+snippet kovw "Kohana View" !b
+<?php defined('SYSPATH') OR die('No direct access allowed.');
+
+class View_${1}${2:`!p snip.rv=snip.fn.capitalize().split('.')[0]`} extends ${3:View_Master} {
+	public $page_title 	 = '${4:TITLE}';
+	public $subtitle = 'Subtitle';
+
+	function scripts(){
+		$scripts = parent::scripts();
+		// $scripts[] = 'path/to/script';
+		return $scripts;
+	}
+
+	function styles(){
+		$styles = parent::styles();
+		// $styles[] = 'path/to/styles';
+		return $styles;
+	}
+} // end of view
+endsnippet
+
+snippet orm "makes orm calls" !b
+\$`!p snip.rv=t[1].lower()` = ORM::factory('${1:Model}' ${2:, \$id});
+endsnippet
+
+snippet vw "Create View" !b
+$view = new View_${1:Admin_List};
+$this->render($view);
+endsnippet
+
+snippet dbsel "Kohana DB select " !b
+${1:\$db =} DB::select()
+				->from('${2:TABLE_NAME}')${3}
+				->execute();
+endsnippet
+
+
+# Laravel stuffs
+# {{{
+
+snippet lv.m "Laravel 5 Model" b
+<?php namespace ${1:PackageName};
+
+use Illuminate\Database\Eloquent\Model;
+
+class ${2:`!p snip.rv=snip.fn.capitalize().split('.')[0]`} extends ${3:Model} {
+	protected $guarded = array('id', ${4:});
+
+}
+endsnippet
+
+snippet lv.c "Laravel 5 Controller" b
+<?php namespace ${1:PackageName}\Http\Controllers;
+
+use Request;
+use Storage;
+
+class ${2:`!p snip.rv=snip.fn.capitalize().split('.')[0]`} extends ${3:Controller} {
+	public function __construct()
+	{
+		// add authentication
+		$this->middleware('auth');
+	}
+
+}
+endsnippet
+
+snippet sh_c "Creates laravel schema" b
+Schema::create('${1:tablename}', function(Blueprint $table)
+{
+	$table->increments('id');
+	sh_col${2}
+	$table->timestamps();
+});
+endsnippet
+
+snippet sh_u "make changes to schema" b
+Schema::table('${1:table_name}', function($table) {
+	sh_col${2}
+});
+endsnippet
+
+snippet sh_d "delete table" b
+	Schema::dropIfExists('${1:table_name}');
+endsnippet
+
+snippet sh_col "adds column things" b
+$table->${1:string}('${2:col_name}');
+endsnippet
+
+snippet sh_col_d "Drop column" b
+$table->dropColumn('${1:col_name}');
+endsnippet
+
+snippet sh_col_s "add string column" b
+$table->string("${1:some_str}", ${2:120});
+endsnippet
+
+snippet sh_col_ui "add unsigned integer" b
+$table->unsignedInteger("${1:some_ui}");
+endsnippet
+
+snippet sh_col_fk "add foreign key" b
+$table->unsignedInteger('${1:some_ui}')${4:->nullable()};
+$table->foreign('${2:`!p snip.rv=t[1]`}')
+		->references('${2:id}')
+		->on('${3:table_name}')
+		->onDelete('cascade');
+endsnippet
+
+snippet sh_col_dk "remove foreign index" b
+$table->dropForeign('${1:TABLE_NAME}_${2:FOREIGN_KEY_NAME}_foreign');
+endsnippet
+
+snippet bt "laravel belongs to" b
+function ${1:model}()
+{
+	return $this->belongsTo('${2:<PKG>}\\${1/\w+\s*/\u$0/}');
+}
+endsnippet
+
+snippet hm "laravel has many" b
+function ${1:model}s()
+{
+	return $this->hasMany('${2:<PKG>}\\${1/\w+\s*/\u$0/}');
+}
+endsnippet
+
+snippet test "Test class" b
+<?php
+
+use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
+
+class ${1:Class}Test extends TestCase
+{
+	function test${2:METHOD}()
+	{
+	}
+}
+endsnippet
+
+snippet fac "Model factory" b
+$factory->define(${1:NAMESPACE}\\${2:MODEL}::class, function (Faker\Generator $faker) {
+	return [
+		'${3:COL}' => $faker->,
+	];
+});
+endsnippet
+
+# }}}

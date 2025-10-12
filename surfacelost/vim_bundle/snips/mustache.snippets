@@ -1,0 +1,29 @@
+extends html
+
+snippet {# "mustache loop" !b
+	{{#${2:name}}}
+		${2}
+	{{/$1}}
+endsnippet
+snippet {^ "mustache loop" !b
+	{{^${2:name}}}
+		${2}
+	{{/$1}}
+endsnippet
+
+snippet {{ "mustache variable" !b
+{{${1:name}}}$0
+endsnippet
+
+snippet tbl "Make table in mustache" !b
+<table>
+	<thead>
+		tr>th*$2${3}
+	</thead>
+(thead>
+<tbody>
+	{{#${1:items}}}
+		tr>td*${2:3}
+	{{/$1}}
+</tbody>
+endsnippet

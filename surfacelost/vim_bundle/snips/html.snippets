@@ -1,0 +1,64 @@
+snippet form "New form" b
+<form class="form" method="POST" action="${1}" ${enctype="multipart/form-data"}>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			${2:FORM HEADING}
+		</div>
+		<div class="panel-body">
+			<!-- form content -->
+		</div>
+		<div class="panel-footer">
+			<input class="btn btn-success" type="submit" value="Save">
+		</div>
+	</div>
+</form>
+endsnippet
+
+snippet panel "New Panel" b
+<div class="panel panel-default">
+	<div class="panel-heading">
+		${1:PANEL HEADING}
+	</div>
+	<div class="panel-body">
+		${2:PANEL BODY}
+	</div>
+	<div class="panel-footer">
+		${3:PANEL FOOTER}
+	</div>
+</div>
+endsnippet
+snippet input "input with bootstrap" b
+<div class="form-group">
+	<label for="${1:elmid}">${6}${2:`!p snip.rv=t[1].capitalize().replace('_', ' ')`}</label>
+	<input id="${3:`!p snip.rv=t[1]`}" class="form-control"
+		type="${4:text}" name="${5:`!p snip.rv=t[1]`}">
+</div>
+endsnippet
+
+snippet select "select with bootstrap" b
+<div class="form-group">
+	<label for="${1:elmid}">${7}${2:LABEL}</label>
+	<select id="${3:`!p snip.rv=t[1]`}" class="form-control" name="${5:`!p snip.rv=t[1]`}">
+		${6}
+	</select>
+</div>
+endsnippet
+
+snippet textarea "input with bootstrap" b
+<div class="form-group">
+	<label for="${1:elmid}">${6}${2:`!p snip.rv=t[1].capitalize().replace('_', ' ')`}</label>
+	<textarea id="${3:`!p snip.rv=t[1]`}" class="form-control" name="${5:`!p snip.rv=t[1]`}"></textarea>
+</div>
+endsnippet
+
+snippet submit "input with bootstrap" b
+<div>
+	<input class="btn btn-success" type="submit" value="${1:Save}">
+</div>
+endsnippet
+
+snippet linkbtn "Link as a button" b
+<a href="${1:#}" class="btn btn-${2:primary}">
+	<span class="glyphicon glyphicon-${3:plus}"></span>
+</a>
+endsnippet
