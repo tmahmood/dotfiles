@@ -14,6 +14,8 @@
 
 
 set $mod Mod4
+set $term ghostty
+set $term_exec ghostty -e
 
 workspace_auto_back_and_forth yes
 popup_during_fullscreen smart
@@ -86,7 +88,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec wezterm
+bindsym $mod+Return exec $term
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec --no-startup-id dmenu_run
@@ -321,8 +323,8 @@ mode "$mode_launcher" {
     bindsym l exec gnome-calculator, mode "default"
     bindsym b exec blender, mode "default"
     bindsym r exec krita, mode "default"
-    bindsym v exec wezterm start vim, mode "default"
-    bindsym y exec wezterm start yazi, mode "default"
+    bindsym v exec $term_exec vim, mode "default"
+    bindsym y exec $term_exec yazi, mode "default"
     bindsym x exec virtualbox, mode "default"
 
     # back to normal: Enter or Escape or $mod+r
