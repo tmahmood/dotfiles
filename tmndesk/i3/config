@@ -14,7 +14,8 @@
 
 
 set $mod Mod4
-set $term ptyxis
+set $term ghostty
+set $term_exec ghostty -e
 
 workspace_auto_back_and_forth yes
 popup_during_fullscreen smart
@@ -88,7 +89,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec $term --new-window
+bindsym $mod+Return exec $term
 # bindsym $mod+Return exec ghostty
 
 # start dmenu (a program launcher)
@@ -398,8 +399,8 @@ mode "$mode_launcher" {
     bindsym l exec gnome-calculator, mode "default"
     bindsym b exec blender, mode "default"
     bindsym r exec krita, mode "default"
-    bindsym v exec $term -- vim, mode "default"
-    bindsym y exec $term -- yazi, mode "default"
+    bindsym v exec $term_exec vim, mode "default"
+    bindsym y exec $term_exec yazi, mode "default"
     bindsym x exec virtualbox, mode "default"
 
     # back to normal: Enter or Escape or $mod+r
