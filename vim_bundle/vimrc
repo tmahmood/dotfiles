@@ -220,6 +220,7 @@ noremap `. '.
 " Quickfix navigation
 nmap cn :cnext<cr>
 nmap cp :cprev<cr>
+" buffer navigation
 nmap bn <esc>:bn<cr>
 nmap bp <esc>:bp<cr>
 " Redraw screen and remove search highlights
@@ -235,19 +236,29 @@ map ,ss :setlocal spell!<cr>
 " Yep ... no more up keys
 map <UP> <esc>
 map <DOWN> <esc>
-map <LEFT> <esc>:Vista!!<cr>
-nnoremap <RIGHT> :UndotreeToggle<CR>
+map <LEFT> <esc>
+nnoremap <RIGHT> <esc>
 " update tag file/headless make/display errors
 map <Leader>c :Copen<cr>
 map <Leader>e :Errors<cr>
 " Prints date and time
-map <leader>dt :r! date +"// +\%Y-\%m-\%d \%H:\%M:\%S"<cr><cr>
-map <leader>dT :r! date +"\# \%d \%h, \%a, \%Y"<cr><cr>
+" for Rust
+map <leader>dt/ :r! date +"// \%Y-\%m-\%d \%H:\%M:\%S \| "<cr>A
+" for Python
+map <leader>dt# :r! date +"\# \%Y-\%m-\%d \%H:\%M:\%S \| "<cr>A
+" for vimwiki
+map <leader>dtw :r! date +"= \%d \%h, \%a, \%Y ="<cr>A
+map <leader>dts :r! date +"+\%H:\%M:\%S \|"<cr>A
+map <leader>dtl :r! date +"+\%Y-\%m-\%d \%H:\%M:\%S \| "<cr>A
 "}}}
+"
+"
+"
  
 nnoremap <Leader>\ :Goyo<CR>
 map ,e <esc>:NERDTreeToggle<CR>
-
+map ,u <esc>:UndotreeToggle<CR>
+map ,v <esc>:Vista!!<cr>
 map <Space>m <esc>15<c-w><c-+>
 
 
@@ -496,6 +507,7 @@ let g:startify_skiplist = [
             \ ]
 let g:vimwiki_list = [{'path': '~/Dropbox/notes/Obsidian', 'ext': 'md'}]
 let g:vimwiki_auto_chdir = 1
+let g:vista_executive_for = {'vimwiki': 'toc'}
 
 let g:airline_powerline_fonts = 1
 let g:airline_experimental = 1

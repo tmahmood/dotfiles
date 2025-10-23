@@ -50,6 +50,7 @@ exec_always --no-startup-id xss-lock -l --transfer-sleep-lock -- betterlockscree
 
 exec_always /$HOME/bin/polybar.sh
 exec --no-startup-id dunst
+exec --no-startup-id kdeconnect-indicator
 # task management
 exec --no-startup-id ~/bin/startup
 exec --no-startup-id copyq
@@ -220,6 +221,7 @@ set $o1 "DP-0"
 set $o2 "HDMI-0"
 set $o3 "HDMI-1"
 
+
 workspace $ws01 output $o1
 workspace $ws02 output $o1
 workspace $ws03 output $o1
@@ -269,6 +271,7 @@ workspace "og" output $o2
 workspace "nt" output $o3
 workspace "uw" output $o3
 workspace "fa" output $o2
+workspace "cl" output $o1
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws01
@@ -314,6 +317,7 @@ assign [title="Signal"] fa
 assign [class="Nyxt"] nt
 assign [class="Upwork"] uw
 assign [title="Desktop Takeover"] 8
+assign [class="gnome-calendar"] cl
 
 
 for_window [window_role="pop-up"] floating enable
