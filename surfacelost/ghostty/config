@@ -24,9 +24,10 @@ theme = "Horizon"
 #theme = "BirdsOfParadise"
 #background-opacity = 0.80
 
-font-family = "MartianMono NF Cond"
+#font-family = "GeistMono Nerd Font Mono"
+font-family = "JetBrainsMonoNL Nerd Font Propo"
 bold-is-bright = false
-font-size = 16
+font-size = 17
 
 gtk-titlebar = false
 gtk-single-instance = true
