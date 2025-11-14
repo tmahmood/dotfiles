@@ -1,5 +1,6 @@
 
 call plug#begin()
+Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
 Plug 'mhinz/vim-startify'
 Plug 'mivok/vimtodo'
 Plug 'vim-scripts/darkbone.vim'
@@ -53,6 +54,10 @@ Plug 'honza/vim-snippets'
 Plug 'girishji/vimcomplete'
 
 Plug 'embark-theme/vim'
+
+Plug 'tpope/vim-dadbod'
+Plug 'kristijanhusak/vim-dadbod-ui'
+Plug 'kristijanhusak/vim-dadbod-completion' "Optional
 call plug#end()
 
 
@@ -162,6 +167,7 @@ endif
 let java_highlight_functions = 1
 
 
+autocmd FileType json set formatprg=jq
 autocmd FileType html set spell
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 
@@ -526,6 +532,8 @@ let g:airline_symbols.linenr =  ' ⣾ '
 let g:airline_symbols.maxlinenr = ' '
 set nocursorcolumn
 
+let g:clap_plugin_experimental = v:true
+let g:clap_theme = 'material_design_dark'
 
 " {{{ themeing
 set background=dark

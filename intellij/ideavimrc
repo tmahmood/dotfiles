@@ -4,6 +4,12 @@ set idearefactormode=keep
 set easymotion
 set highlightedyank
 set surround
+set peekaboo
+set which-key
+
+set notimeout
+set timeoutlen=5000
+
 
 let mapleader=' '
 set number relativenumber

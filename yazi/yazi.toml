@@ -1,9 +1,17 @@
 [opener]
-lnav = [
-    { run = '$TERMINAL --new-window -- lnav "$@"', for="unix", desc="lnav" }
+lnav_cli = [
+    { run = 'lnav "$@"', for="unix", desc="lnav in shell", block=true }
+]
+jless = [
+    { run = 'jless "$@"', for="unix", desc="jless", block=true }
+]
+vd = [
+    { run = 'vd "$@"', for="unix", desc="visidata", block=true }
 ]
 [open]
 prepend_rules = [
-	{ name = "*.log", use = "lnav", block = true, desc = "lnav" },
+	{ name = "*.log", use = "lnav_cli", block = true, desc = "lnav cli" },
+	{ name = "*.{json,jsonl,jsonStream}", use = "jless", block = true, desc = "jless" },
+	{ name = "*.{sqlite,csv}", use = "vd", block = true, desc = "visidata cli" },
 ]
 

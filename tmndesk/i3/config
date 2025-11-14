@@ -14,8 +14,8 @@
 
 
 set $mod Mod4
-set $term ghostty
-set $term_exec ghostty -e
+set $term ptyxis --new-window
+set $term_exec ptyxis --new-window --
 
 workspace_auto_back_and_forth yes
 popup_during_fullscreen smart
@@ -91,7 +91,6 @@ tiling_drag modifier titlebar
 
 # start a terminal
 bindsym $mod+Return exec $term
-# bindsym $mod+Return exec ghostty
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec --no-startup-id dmenu_run
@@ -429,6 +428,19 @@ mode "$screenshot" {
     bindsym $mod+c mode "default"
 }
 
+set $tools [v]im [j]less [s]cratch [q]uick_note
+
+mode "$tools" {
+    bindsym v exec $term_exec ~/bin/sc_json, mode "default"
+    bindsym j exec $term_exec ~/bin/sj_json, mode "default"
+    bindsym s exec $term_exec ~/bin/scratch, mode "default"
+    bindsym q exec $term_exec ~/bin/qn, mode "default"
+
+    # back to normal: Enter or Escape or $mod+r
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+c mode "default"
+}
 
 
 bindsym $mod+c mode "$screenshot"
@@ -436,6 +448,7 @@ bindsym $mod+r mode "resize"
 bindsym $mod+x mode "$power_mode"
 bindsym $mod+o mode "$mode_launcher"
 bindsym $mod+e mode "$i3_mode"
+bindsym $mod+t mode "$tools"
 
 # ╦ ╦┌┬┐┬┬  ┬┌┬┐┬┌─┐┌─┐
 # ║ ║ │ ││  │ │ │├┤ └─┐
