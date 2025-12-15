@@ -107,6 +107,11 @@ input {
     position x=1280 y=0
 }
 
+// output "eDP-1" {
+//     scale 1
+// }
+
+
 output "HDMI-A-2" {
     mode "1920x1080@143.614"
     position x=6400 y=0

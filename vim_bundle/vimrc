@@ -1,5 +1,6 @@
 
 call plug#begin()
+Plug 'sheerun/vim-polyglot'
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
 Plug 'mhinz/vim-startify'
 Plug 'mivok/vimtodo'
@@ -9,7 +10,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 Plug 'mattn/emmet-vim'
 Plug 'godlygeek/csapprox'
 Plug 'tpope/vim-fugitive'
@@ -256,6 +257,7 @@ map <leader>dt# :r! date +"\# \%Y-\%m-\%d \%H:\%M:\%S \| "<cr>A
 map <leader>dtw :r! date +"= \%d \%h, \%a, \%Y ="<cr>A
 map <leader>dts :r! date +"+\%H:\%M:\%S \|"<cr>A
 map <leader>dtl :r! date +"+\%Y-\%m-\%d \%H:\%M:\%S \| "<cr>A
+
 "}}}
 "
 "
@@ -298,9 +300,6 @@ let g:vista_fzf_preview = ['right:50%']
 let g:rooter_patterns = ['build.gradle', 'package.json', '.git/', 'cargo.toml']
 let python_highlight_all = 1
 
-let g:ale_linters = {'rust': ['analyzer']}
-let g:ale_fixers = {'rust': ['rustfmt']}
-let g:ale_completion_enabled = 1
 
 function! LinterStatus() abort
     let l:counts = ale#statusline#Count(bufnr(''))
@@ -314,7 +313,21 @@ function! LinterStatus() abort
                 \   all_errors
                 \)
 endfunction
+
 set omnifunc=ale#completion#OmniFunc
+let g:ale_linters = {'rust': ['analyzer'], 'python':['ruff']}
+let g:ale_fixers = {'rust': ['rustfmt'], 'python':['ruff']}
+let g:ale_completion_enabled = 1
+
+map ,cr :ALEFindReferences<cr>
+map ,cd :ALEGoToDefinition<cr>
+map ,cs :ALESymbolSearch<cr>
+map ,ch :ALEDocumentation<cr>
+map ,cq :ALEPopulateQuickfix<cr>
+map ,cR :ALERename<cr>
+map ,ca :ALECodeAction<cr>
+
+
 let g:rainbow_active = 1
 
 nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
@@ -548,7 +561,9 @@ if has("gui_running")
 else
     set t_Co=256
     set termguicolors
-    colorscheme embark
+    let g:sonokai_style = 'andromeda'
+    let g:sonokai_better_performance = 1
+    colorscheme sonokai
     " colorscheme xcode
 endif
 " }}}

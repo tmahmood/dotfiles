@@ -14,9 +14,11 @@
 
 
 set $mod Mod4
-set $term ptyxis --new-window
-set $term_exec ptyxis --new-window --
+# set $term ptyxis --new-window
+# set $term_exec ptyxis --new-window --
 
+set $term ghostty
+set $term_exec ghostty -e
 workspace_auto_back_and_forth yes
 popup_during_fullscreen smart
 
