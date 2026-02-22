@@ -12,6 +12,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'dense-analysis/ale'
 Plug 'mattn/emmet-vim'
+Plug 'mattn/calendar-vim'
 Plug 'godlygeek/csapprox'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -254,7 +255,7 @@ map <leader>dt/ :r! date +"// \%Y-\%m-\%d \%H:\%M:\%S \| "<cr>A
 " for Python
 map <leader>dt# :r! date +"\# \%Y-\%m-\%d \%H:\%M:\%S \| "<cr>A
 " for vimwiki
-map <leader>dtw :r! date +"= \%d \%h, \%a, \%Y ="<cr>A
+map <leader>dtw :r! date +"# \%d \%h, \%a, \%Y"<cr>A
 map <leader>dts :r! date +"+\%H:\%M:\%S \|"<cr>A
 map <leader>dtl :r! date +"+\%Y-\%m-\%d \%H:\%M:\%S \| "<cr>A
 
@@ -463,6 +464,7 @@ nnoremap ,t :Tags<CR>
 nnoremap ,g :BTags<CR>
 nnoremap ,l :Lines<CR>
 nnoremap ,bl :BLines<CR>
+nnoremap ,c :Calendar<CR>
 
 " This is the default extra key bindings
 let g:fzf_action = {
@@ -524,8 +526,9 @@ augroup END
 let g:startify_skiplist = [
             \ 'tmp/',
             \ ]
-let g:vimwiki_list = [{'path': '~/Dropbox/notes/Obsidian', 'ext': 'md'}]
+let g:vimwiki_list = [{'path': '~/Dropbox/notes/Obsidian', 'ext': 'md', 'syntax': 'markdown'}]
 let g:vimwiki_auto_chdir = 1
+let g:vimwiki_auto_header = 1
 let g:vista_executive_for = {'vimwiki': 'toc'}
 
 let g:airline_powerline_fonts = 1
@@ -561,9 +564,10 @@ if has("gui_running")
 else
     set t_Co=256
     set termguicolors
-    let g:sonokai_style = 'andromeda'
-    let g:sonokai_better_performance = 1
-    colorscheme sonokai
+    colorscheme jellybeans
+    " let g:sonokai_style = 'andromeda'
+    " let g:sonokai_better_performance = 1
+    " colorscheme sonokai
     " colorscheme xcode
 endif
 " }}}

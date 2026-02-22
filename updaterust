@@ -12,6 +12,7 @@ rustup run nightly cargo install wasm-bindgen-cli
 rustup run nightly cargo install --force cargo-generate
 rustup run nightly cargo install cargo-expand --force
 rustup run nightly cargo install ripgrep --force
+rustup run nightly cargo install diesel --force
 # cd ~/.vim/pack/ages/start/ || exit
 # ./update_all.sh
 
