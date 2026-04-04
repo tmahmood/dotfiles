@@ -58,7 +58,7 @@ nmap ]] <Action>(MethodDown)
 nmap [c <Action>(JumpToLastChange)
 nmap ]c <Action>(JumpToNextChange)
 
-vmap ]w <Action>(EditorSelectWord)
+nmap ]w <Action>(EditorSelectWord)
 
 nmap <leader>z <Action>(ToggleDistractionFreeMode)
 
