@@ -1,5 +1,7 @@
 
 call plug#begin()
+Plug 'sheerun/vim-polyglot'
+Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
 Plug 'mhinz/vim-startify'
 Plug 'mivok/vimtodo'
 Plug 'vim-scripts/darkbone.vim'
@@ -8,8 +10,9 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 Plug 'mattn/emmet-vim'
+Plug 'mattn/calendar-vim'
 Plug 'godlygeek/csapprox'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -53,6 +56,10 @@ Plug 'honza/vim-snippets'
 Plug 'girishji/vimcomplete'
 
 Plug 'embark-theme/vim'
+
+Plug 'tpope/vim-dadbod'
+Plug 'kristijanhusak/vim-dadbod-ui'
+Plug 'kristijanhusak/vim-dadbod-completion' "Optional
 call plug#end()
 
 
@@ -162,6 +169,7 @@ endif
 let java_highlight_functions = 1
 
 
+autocmd FileType json set formatprg=jq
 autocmd FileType html set spell
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 
@@ -220,6 +228,7 @@ noremap `. '.
 " Quickfix navigation
 nmap cn :cnext<cr>
 nmap cp :cprev<cr>
+" buffer navigation
 nmap bn <esc>:bn<cr>
 nmap bp <esc>:bp<cr>
 " Redraw screen and remove search highlights
@@ -235,19 +244,30 @@ map ,ss :setlocal spell!<cr>
 " Yep ... no more up keys
 map <UP> <esc>
 map <DOWN> <esc>
-map <LEFT> <esc>:Vista!!<cr>
-nnoremap <RIGHT> :UndotreeToggle<CR>
+map <LEFT> <esc>
+nnoremap <RIGHT> <esc>
 " update tag file/headless make/display errors
 map <Leader>c :Copen<cr>
 map <Leader>e :Errors<cr>
 " Prints date and time
-map <leader>dt :r! date +"// +\%Y-\%m-\%d \%H:\%M:\%S"<cr><cr>
-map <leader>dT :r! date +"\# \%d \%h, \%a, \%Y"<cr><cr>
+" for Rust
+map <leader>dt/ :r! date +"// \%Y-\%m-\%d \%H:\%M:\%S \| "<cr>A
+" for Python
+map <leader>dt# :r! date +"\# \%Y-\%m-\%d \%H:\%M:\%S \| "<cr>A
+" for vimwiki
+map <leader>dtw :r! date +"# \%d \%h, \%a, \%Y"<cr>A
+map <leader>dts :r! date +"+\%H:\%M:\%S \|"<cr>A
+map <leader>dtl :r! date +"+\%Y-\%m-\%d \%H:\%M:\%S \| "<cr>A
+
 "}}}
+"
+"
+"
  
 nnoremap <Leader>\ :Goyo<CR>
 map ,e <esc>:NERDTreeToggle<CR>
-
+map ,u <esc>:UndotreeToggle<CR>
+map ,v <esc>:Vista!!<cr>
 map <Space>m <esc>15<c-w><c-+>
 
 
@@ -281,9 +301,6 @@ let g:vista_fzf_preview = ['right:50%']
 let g:rooter_patterns = ['build.gradle', 'package.json', '.git/', 'cargo.toml']
 let python_highlight_all = 1
 
-let g:ale_linters = {'rust': ['analyzer']}
-let g:ale_fixers = {'rust': ['rustfmt']}
-let g:ale_completion_enabled = 1
 
 function! LinterStatus() abort
     let l:counts = ale#statusline#Count(bufnr(''))
@@ -297,7 +314,21 @@ function! LinterStatus() abort
                 \   all_errors
                 \)
 endfunction
+
 set omnifunc=ale#completion#OmniFunc
+let g:ale_linters = {'rust': ['analyzer'], 'python':['ruff']}
+let g:ale_fixers = {'rust': ['rustfmt'], 'python':['ruff']}
+let g:ale_completion_enabled = 1
+
+map ,cr :ALEFindReferences<cr>
+map ,cd :ALEGoToDefinition<cr>
+map ,cs :ALESymbolSearch<cr>
+map ,ch :ALEDocumentation<cr>
+map ,cq :ALEPopulateQuickfix<cr>
+map ,cR :ALERename<cr>
+map ,ca :ALECodeAction<cr>
+
+
 let g:rainbow_active = 1
 
 nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
@@ -433,6 +464,7 @@ nnoremap ,t :Tags<CR>
 nnoremap ,g :BTags<CR>
 nnoremap ,l :Lines<CR>
 nnoremap ,bl :BLines<CR>
+nnoremap ,c :Calendar<CR>
 
 " This is the default extra key bindings
 let g:fzf_action = {
@@ -494,8 +526,10 @@ augroup END
 let g:startify_skiplist = [
             \ 'tmp/',
             \ ]
-let g:vimwiki_list = [{'path': '~/Dropbox/notes/Obsidian', 'ext': 'md'}]
+let g:vimwiki_list = [{'path': '~/Documents/Obsidian/', 'ext': 'md', 'syntax': 'markdown'}]
 let g:vimwiki_auto_chdir = 1
+let g:vimwiki_auto_header = 1
+let g:vista_executive_for = {'vimwiki': 'toc'}
 
 let g:airline_powerline_fonts = 1
 let g:airline_experimental = 1
@@ -514,6 +548,8 @@ let g:airline_symbols.linenr =  ' ⣾ '
 let g:airline_symbols.maxlinenr = ' '
 set nocursorcolumn
 
+let g:clap_plugin_experimental = v:true
+let g:clap_theme = 'material_design_dark'
 
 " {{{ themeing
 set background=dark
@@ -528,7 +564,10 @@ if has("gui_running")
 else
     set t_Co=256
     set termguicolors
-    colorscheme embark
+    colorscheme jellybeans
+    " let g:sonokai_style = 'andromeda'
+    " let g:sonokai_better_performance = 1
+    " colorscheme sonokai
     " colorscheme xcode
 endif
 " }}}
