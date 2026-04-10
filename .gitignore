@@ -1,7 +1,8 @@
 ssh_certs/
 pub_keys/
-vim_bundle/plugged
+tmndesk/vim_bundle/plugged
 oh-my-zsh/cache/
 retired/old_cfg
 lnav/view*.json
 surfacelost/vim_bundle/plugged
+

@@ -1,0 +1,25 @@
+snippet pgtbl "Creates postgres table layout" !b
+CREATE TABLE ${1:table_name} (
+	id SERIAL,
+	${2}
+	date_updated timestamp,
+	PRIMARY KEY (id)
+);
+endsnippet
+snippet tbl "Creates table layout" !b
+CREATE TABLE IF NOT EXISTS ${1:table_name} (
+	id int(11) unsigned NOT NULL auto_increment,
+	${2}
+	date_updated timestamp,
+	PRIMARY KEY (id)
+);
+endsnippet
+snippet vc "varchar" !b
+${1:varname} varchar(${2:100}),
+endsnippet
+
+snippet fk "foreign key" !b
+${1:table}_id integer,
+FOREIGN KEY($1_id) references $1s(id)
+endsnippet
+

@@ -1,0 +1,20 @@
+snippet log "Logs text" !b
+console.log($0);
+endsnippet
+
+snippet jk "Skeleton Javascript file" !b
+function ${1:APP}(opts) {
+	this.opts = opts == null ?  opts : {};
+}
+var ${2:scriptcfg} = new ${3:$1}();
+$(function(){
+	${4}
+});
+endsnippet
+
+snippet onclk "Click Event" !b
+$(document).on('click', '#${1}', function(ev){
+	ev.preventDefault();
+	${2}
+});
+endsnippet
