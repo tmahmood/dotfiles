@@ -10,8 +10,8 @@ vd = [
 ]
 [open]
 prepend_rules = [
-	{ name = "*.log", use = "lnav_cli", block = true, desc = "lnav cli" },
-	{ name = "*.{json,jsonl,jsonStream}", use = "jless", block = true, desc = "jless" },
-	{ name = "*.{sqlite,csv}", use = "vd", block = true, desc = "visidata cli" },
+	{ mime = "*.log", use = "lnav_cli", block = true, desc = "lnav cli" },
+	{ mime = "*.{json,jsonl,jsonStream}", use = "jless", block = true, desc = "jless" },
+	{ mime = "*.{sqlite,csv}", use = "vd", block = true, desc = "visidata cli" },
 ]
 

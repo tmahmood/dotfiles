@@ -100,6 +100,7 @@ bindsym $mod+Return exec $term
 # bindsym $mod+d exec "rofi -modi drun,run -show drun"
 # bindsym $mod+Shift+d exec "rofi -modi drun,run -show run"
 bindsym $mod+d exec "rofi -show combi -modes combi -combi-modes 'drun,run,window'"
+bindsym $mod+y exec "$HOME/bin/rift"
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -218,61 +219,61 @@ set $ws19 "d3"
 
 set $ws20 "ms"
 
-set $o1 "DP-0"
-set $o2 "HDMI-0"
-set $o3 "HDMI-1"
+set $m4k "DP-0"
+set $m2k "HDMI-0"
+set $mhd "HDMI-2"
 
 
-workspace $ws01 output $o1
-workspace $ws02 output $o1
-workspace $ws03 output $o1
-workspace $ws04 output $o1
-workspace $ws05 output $o1
+workspace $ws01 output $m4k
+workspace $ws02 output $m4k
+workspace $ws03 output $m4k
+workspace $ws04 output $m4k
+workspace $ws05 output $m4k
 
-workspace $ws06 output $o2
-workspace $ws07 output $o2
-workspace $ws08 output $o2
-workspace $ws09 output $o2
-workspace $ws10 output $o2
+workspace $ws06 output $m2k
+workspace $ws07 output $m2k
+workspace $ws08 output $m2k
+workspace $ws09 output $m2k
+workspace $ws10 output $m2k
 
-workspace $ws11 output $o1
-workspace $ws12 output $o2
-workspace $ws13 output $o1
-workspace $ws20 output $o2
-workspace $ws14 output $o1
+workspace $ws11 output $m4k
+workspace $ws12 output $m2k
+workspace $ws13 output $m4k
+workspace $ws20 output $m2k
+workspace $ws14 output $m4k
 
-workspace $ws15 output $o2
-workspace $ws16 output $o1
-workspace $ws17 output $o2
-workspace $ws18 output $o1
-workspace $ws19 output $o2
+workspace $ws15 output $m2k
+workspace $ws16 output $m4k
+workspace $ws17 output $m2k
+workspace $ws18 output $m4k
+workspace $ws19 output $m2k
 
 # client workspaces
 
-workspace $cl1 output $o1
-workspace $cl2 output $o1
-workspace $cl3 output $o1
+workspace $cl1 output $m4k
+workspace $cl2 output $m4k
+workspace $cl3 output $m4k
 
-workspace $cl1_1 output $o2
-workspace $cl2_1 output $o2
-workspace $cl3_1 output $o2
-workspace $cl4_1 output $o2
-workspace $cl5_1 output $o2
+workspace $cl1_1 output $m2k
+workspace $cl2_1 output $m2k
+workspace $cl3_1 output $m2k
+workspace $cl4_1 output $m2k
+workspace $cl5_1 output $m2k
       
-workspace $cl1_2 output $o3
-workspace $cl2_2 output $o3
-workspace $cl3_2 output $o3
-workspace $cl4_2 output $o3
-workspace $cl5_2 output $o3
+workspace $cl1_2 output $mhd
+workspace $cl2_2 output $mhd
+workspace $cl3_2 output $mhd
+workspace $cl4_2 output $mhd
+workspace $cl5_2 output $mhd
 
 # other things
-workspace "gm" output $o1
-workspace "og" output $o2
+workspace "gm" output $m4k
+workspace "og" output $m2k
 
-workspace "nt" output $o3
-workspace "uw" output $o3
-workspace "fa" output $o2
-workspace "cl" output $o1
+workspace "nt" output $mhd
+workspace "uw" output $m4k
+workspace "fa" output $m2k
+workspace "cl" output $mhd
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws01

@@ -22,7 +22,7 @@
 #theme = "catppuccin-mocha"
 #theme = "Chalk"
 #theme = "Ayu"
-theme = "Flexoki Dark"
+#theme = "Flexoki Dark"
 #theme = "BirdsOfParadise"
 #background-opacity = 0.80
 
@@ -48,3 +48,4 @@ keybind = ctrl+shift+comma=reload_config
 
 window-width = 154
 window-height = 34 
+config-file = ?auto/theme.ghostty

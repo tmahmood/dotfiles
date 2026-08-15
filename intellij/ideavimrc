@@ -4,7 +4,6 @@ set idearefactormode=keep
 set easymotion
 set highlightedyank
 set surround
-set peekaboo
 set which-key
 
 set notimeout
@@ -29,6 +28,9 @@ nmap <leader>m <Action>($LRU)
 nmap <leader>b <Action>(RecentFiles)
 nmap <leader>f <Action>(FileStructurePopup)
 nmap ,e <Action>(ActivateProjectToolWindow)
+" Refactor: Switch case of a variable
+nmap <leader>r <Action>(RenameElement)bve<Action>(osmedile.intellij.stringmanip.RepeatAction)<CR><Esc>b
+
 
 nmap ]C <Action>(VcsShowNextChangeMarker)
 nmap [C <Action>(VcsShowPrevChangeMarker)

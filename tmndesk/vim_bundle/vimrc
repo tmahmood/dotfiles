@@ -47,6 +47,7 @@ Plug 'jbmorgado/vim-pine-script'
 Plug 'vimwiki/vimwiki'
 Plug 'arzg/vim-colors-xcode'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'freitass/todo.txt-vim'
 
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -505,7 +506,7 @@ augroup END
 let g:startify_skiplist = [
             \ 'tmp/',
             \ ]
-let g:vimwiki_list = [{'path': '~/Dropbox/notes/Obsidian', 'ext': 'md'}]
+let g:vimwiki_list = [{'path': '~/Dropbox/notes/Obsidian', 'ext': 'md', 'syntax': 'markdown'}]
 let g:vimwiki_auto_chdir = 1
 let g:vista_executive_for = {'vimwiki': 'toc'}
 

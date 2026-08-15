@@ -29,8 +29,8 @@
     # The maximum height of a single notification, excluding the frame.
     height = 400
 
-    # Position the notification in the top right corner
-    origin = top-right
+    # Position the notification in the top center corner
+    origin = top-center
 
     # Offset from the origin
     offset = 10x50
@@ -123,7 +123,7 @@
 
     ### Text ###
 
-    font = Maple Mono SC NF 14
+    font = Departure Mono 14
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.

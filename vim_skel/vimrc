@@ -505,7 +505,7 @@ augroup END
 let g:startify_skiplist = [
             \ 'tmp/',
             \ ]
-let g:vimwiki_list = [{'path': '~/Dropbox/notes/Obsidian', 'ext': 'md'}]
+let g:vimwiki_list = [{'path': '~/Dropbox/notes/Obsidian', 'ext': 'md', 'syntax': 'markdown'}]
 let g:vimwiki_auto_chdir = 1
 let g:vista_executive_for = {'vimwiki': 'toc'}
 
